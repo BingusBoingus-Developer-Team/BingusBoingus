@@ -1,0 +1,15 @@
+
+## will not show up on git changes
+## everything that's compiled
+
+dist/
+
+## node libs
+
+node_modules/
+
+## dotenv environment file(s)
+
+.env
+
+bingusboingus.code-workspace
