@@ -1,5 +1,26 @@
 {
+  "name": "bingusboingus",
+  "version": "0.0.1",
+  "description": "Hey look it's Bingus.... or Boingus?? OR BOTH??",
+  "main": "src/App.service.ts",
+  "scripts": {
+    "deldist": "rimraf dist",
+    "build": "npm run deldist && tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blvckleg/BingusBoingus.git"
+  },
+  "author": "Matteo Juen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Blvckleg/BingusBoingus/issues"
+  },
+  "homepage": "https://github.com/Blvckleg/BingusBoingus/#readme",
   "dependencies": {
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "rimraf": "^5.0.1",
     "typescript": "^5.2.2"
   }
 }
