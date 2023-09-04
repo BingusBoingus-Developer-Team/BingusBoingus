@@ -1,4 +1,3 @@
-import { StringLiteral } from 'typescript';
 import { ICommand } from '../interfaces/ICommand';
 import HelloWorldCommand from './commands/hello-world.command';
 
