@@ -29,3 +29,14 @@ Virtual Tea Party: Join the bot in its daily virtual tea party where it discusse
 - maybe even:
 
 Stay tuned for more updates on BingusBoingus, the Discord bot that's sillier than a rubber chicken in a tuxedo!
+
+This repository follows a structured Git branching workflow:
+
+- Branch Creation: Start a new branch for each feature or bug fix.
+- [Commits](CONTRIBUTING.md#git-commit-type): Make changes and commit with clear messages following the conventional commit messages.
+- [Pull Request](CONTRIBUTING.md#submitting-a-pull-request): Create a PR to merge changes, explaining the purpose.
+- Review: Collaborators review code, provide feedback.
+- Iterations: Address feedback, make necessary adjustments.
+- Merge: Approved changes are merged into the dev branch.
+
+This workflow ensures organized and collaborative development.
