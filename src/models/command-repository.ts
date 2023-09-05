@@ -1,4 +1,4 @@
-import { ICommand } from '../interfaces/icommand';
+import { ICommand } from '../interfaces/ICommand';
 import { commandEntities } from './command-entity';
 
 class CommandRepository {

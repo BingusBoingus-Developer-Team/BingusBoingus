@@ -2,7 +2,7 @@
   "name": "bingusboingus",
   "version": "0.0.1",
   "description": "Hey look it's Bingus.... or Boingus?? OR BOTH??",
-  "main": "src/main.ts",
+  "main": "src/App.service.ts",
   "scripts": {
     "deldist": "rimraf dist",
     "build": "npm run deldist && tsc -p .",

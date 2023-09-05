@@ -1,4 +1,4 @@
-import { ICommand } from '../interfaces/icommand';
+import { ICommand } from '../interfaces/ICommand';
 import HelloWorldCommand from './commands/hello-world.command';
 
 class CommandEntity {
