@@ -1,5 +1,5 @@
 import { CommandInteraction, CacheType } from 'discord.js';
-import { ICommand } from '../../interfaces/ICommand';
+import { ICommand } from '../../interfaces/icommand';
 
 export default class HelloWorldCommand implements ICommand {
   async execute(interaction: CommandInteraction<CacheType>): Promise<boolean> {
