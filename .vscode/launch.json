@@ -19,6 +19,37 @@
                 "<node_internals>/**"
             ]
         },
-
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "start:dev:Lukas",
+            "runtimeExecutable": "npm",
+            "console": "integratedTerminal",
+            "preLaunchTask": "npm: build",
+            "envFile": "${workspaceFolder}/.env.Lukas",
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "deploy-commands:dev:Lukas",
+            "runtimeExecutable": "npm",
+            "console": "integratedTerminal",
+            "preLaunchTask": "npm: build",
+            "envFile": "${workspaceFolder}/.env.Lukas",
+            "runtimeArgs": [
+                "run-script",
+                "deploy-commands"
+            ],
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
     ]
 }
