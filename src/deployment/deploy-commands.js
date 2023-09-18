@@ -14,11 +14,11 @@ rest
   .put(
     Routes.applicationGuildCommands(
       process.env.DISCORD_CLIENT_ID,
-      process.env.DISCORD_GUILD_QQT_ID
+      process.env.DISCORD_GUILD_QQT_ID,
     ),
     {
       body: commands,
-    }
+    },
   )
   .then(() => console.log('deployed'))
   .catch(console.error('something went wrong!'));
