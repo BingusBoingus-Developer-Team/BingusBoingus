@@ -1,12 +1,6 @@
-import {
-  Client,
-  Events,
-  GatewayIntentBits,
-  InteractionResponseType,
-  InteractionType,
-} from 'discord.js';
-import commandRepository from './models/command-repository';
+import { Client, Events, GatewayIntentBits, InteractionResponseType, InteractionType } from 'discord.js';
 import { config } from 'dotenv';
+import { CommandCollectionModule } from './command/commandCollection';
 import { EventListener } from './services/event-handler';
 import { VerifyDiscordRequest, getRandomEmoji } from './helpers/utils';
 const express = require('express');
@@ -22,15 +16,21 @@ function main(args: string[]) {
   const client = new Client({
     intents: [GatewayIntentBits.Guilds],
   });
-  client.once('ready', () => {
+
+  var commandColModule = new CommandCollectionModule();
+
+  client.once(Events.ClientReady, (c) => {
     console.log('Successfully connected to Discord');
+    console.log(`logged in as ${c.user.tag}`);
   });
-  client.on('interactionCreate', async (interaction) => {
+
+  client.on(Events.InteractionCreate, async (interaction) => {
     if (!interaction.isCommand()) {
       return;
     }
     const { commandName } = interaction;
-    commandRepository.getCommandByName(commandName)?.execute(interaction);
+    var command = commandColModule.getCommand(commandName);
+    command?.execute(interaction);
   });
   app.post('/interactions', async function (req, res) {
     // Interaction type and data
@@ -64,7 +64,7 @@ function main(args: string[]) {
 
   const autoReply = new EventListener(client);
   autoReply.startListening();
-  client.login(process.env.DISCORD_TOKEN);
+  client.login(process.env.BOT_TOKEN);
 }
 
 main(process.argv.slice(2));
