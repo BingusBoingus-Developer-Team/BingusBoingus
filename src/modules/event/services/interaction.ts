@@ -9,6 +9,12 @@ export class Interaction extends AEvent {
     return this.run(() => {
       console.log('new interaction');
       console.log(interaction);
+      if (!interaction.isCommand()) {
+        return;
+      }
+      // const { commandName } = interaction;
+      // var command = commandColModule.getCommand(commandName);
+      // command?.execute(interaction);
     });
   }
 }

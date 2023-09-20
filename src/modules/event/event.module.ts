@@ -14,6 +14,14 @@ class EventModule extends ACollectionModule<any, AEvent> {
 
     super(moduleList);
   }
+
+  init(client: any) {
+    this.modulesList.forEach((event) => {
+      client[event.once ? 'once' : 'on'](event.event, (...args: unknown[]) =>
+        event.execute(args),
+      );
+    });
+  }
 }
 
 export { EventModule };

@@ -26,34 +26,11 @@ function main(args: string[]) {
     ],
   });
 
-  initCommands(client);
-  initEvents(client);
+  new CommandModule();
+  new EventModule().init(client);
   initExpress(app, port);
 
   client.login(process.env.BOT_TOKEN);
-}
-
-function initCommands(client: Client) {
-  var commandColModule = new CommandModule();
-  client.on(Events.InteractionCreate, async (interaction) => {
-    if (!interaction.isCommand()) {
-      return;
-    }
-    const { commandName } = interaction;
-    var command = commandColModule.getCommand(commandName);
-    command?.execute(interaction);
-  });
-}
-
-function initEvents(client) {
-  var eventModule = new EventModule();
-  eventModule.modulesList.forEach((event) => {
-    if (event.once) {
-      client.once(event.event, (args) => event.execute(args));
-    } else {
-      client.on(event.event, (args) => event.execute(args));
-    }
-  });
 }
 
 function initExpress(app, port: number | string) {
