@@ -13,4 +13,5 @@ node_modules/
 .env*
 !.env.sample*
 
+tsconfig.tsbuildinfo
 bingusboingus.code-workspace
