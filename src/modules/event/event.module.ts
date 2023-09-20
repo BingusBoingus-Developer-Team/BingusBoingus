@@ -1,8 +1,8 @@
-import { ACollectionModule } from '../helpers/abstract/collection.module.abstract';
+import { ACollectionModule } from '../../helpers/abstract/collection.module.abstract';
 import { AEvent } from './event.abstract';
-import { ClientReady } from './events/clientReady';
-import { Interaction } from './events/interaction';
-import { MessageEvent } from './events/messageEvent';
+import { ClientReady } from './services/clientReady';
+import { Interaction } from './services/interaction';
+import { MessageEvent } from './services/messageEvent';
 
 class EventModule extends ACollectionModule<any, AEvent> {
   constructor() {

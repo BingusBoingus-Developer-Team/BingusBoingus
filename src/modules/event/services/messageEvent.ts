@@ -1,6 +1,6 @@
 import { Events, Message } from 'discord.js';
 import { AEvent } from '../event.abstract';
-import { IResponse } from '../../interfaces/iresponse';
+import { IResponse } from '../interfaces/iresponse';
 
 export class MessageEvent extends AEvent {
   event: Events = Events.MessageCreate; // ShardEvents.Message;

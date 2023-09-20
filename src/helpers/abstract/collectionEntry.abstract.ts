@@ -1,5 +1,3 @@
-import { CacheType, Interaction } from 'discord.js';
-
 export abstract class ACollectionEntry<T> {
   // abstract readonly data: { name: string };
 

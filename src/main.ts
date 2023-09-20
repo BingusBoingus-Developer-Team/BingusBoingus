@@ -6,11 +6,11 @@ import {
   InteractionType,
 } from 'discord.js';
 import { config } from 'dotenv';
-import { CommandModule } from './command/command.module';
+import { CommandModule } from './modules/command/command.module';
 import { Utils } from './helpers/utils';
 import { verifyKeyMiddleware } from 'discord-interactions';
 import { Express, Request, Response } from 'express-serve-static-core';
-import { EventModule } from './event/event.module';
+import { EventModule } from './modules/event/event.module';
 const express = require('express');
 const app: Express = express();
 
