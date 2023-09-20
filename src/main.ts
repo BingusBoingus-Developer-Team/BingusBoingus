@@ -1,29 +1,40 @@
-import { Client, Events, GatewayIntentBits, InteractionResponseType, InteractionType } from 'discord.js';
+import {
+  Client,
+  Events,
+  GatewayIntentBits,
+  InteractionResponseType,
+  InteractionType,
+} from 'discord.js';
 import { config } from 'dotenv';
-import { CommandCollectionModule } from './command/commandCollection';
-import { EventListener } from './services/event-handler';
-import { VerifyDiscordRequest, getRandomEmoji } from './helpers/utils';
+import { CommandModule } from './command/command.module';
+import { Utils } from './helpers/utils';
+import { verifyKeyMiddleware } from 'discord-interactions';
+import { Express, Request, Response } from 'express-serve-static-core';
+import { EventModule } from './event/event.module';
 const express = require('express');
-const app = express();
+const app: Express = express();
 
 function main(args: string[]) {
   config();
-
   const port = process.env.APP_PORT || 3000;
-  app.use(
-    express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) })
-  );
+
   const client = new Client({
-    intents: [GatewayIntentBits.Guilds],
+    intents: [
+      GatewayIntentBits.Guilds,
+      GatewayIntentBits.GuildMessages,
+      GatewayIntentBits.MessageContent,
+    ],
   });
 
-  var commandColModule = new CommandCollectionModule();
+  initCommands(client);
+  initEvents(client);
+  initExpress(app, port);
 
-  client.once(Events.ClientReady, (c) => {
-    console.log('Successfully connected to Discord');
-    console.log(`logged in as ${c.user.tag}`);
-  });
+  client.login(process.env.BOT_TOKEN);
+}
 
+function initCommands(client: Client) {
+  var commandColModule = new CommandModule();
   client.on(Events.InteractionCreate, async (interaction) => {
     if (!interaction.isCommand()) {
       return;
@@ -32,39 +43,65 @@ function main(args: string[]) {
     var command = commandColModule.getCommand(commandName);
     command?.execute(interaction);
   });
-  app.post('/interactions', async function (req, res) {
-    // Interaction type and data
-    const { type, id, data } = req.body;
+}
 
-    /**
-     * Handle verification requests
-     */
-    if (type === InteractionType.Ping) {
-      return res.send({ type: InteractionResponseType.Pong });
-    }
-
-    if (type === InteractionType.ApplicationCommand) {
-      const { name } = data;
-
-      // "test" command
-      if (name === 'test') {
-        // Send a message into the channel where command was triggered from
-        return res.send({
-          type: InteractionResponseType.ChannelMessageWithSource,
-          data: {
-            content: 'hello world ' + getRandomEmoji(),
-          },
-        });
-      }
+function initEvents(client) {
+  var eventModule = new EventModule();
+  eventModule.modulesList.forEach((event) => {
+    if (event.once) {
+      client.once(event.event, (args) => event.execute(args));
+    } else {
+      client.on(event.event, (args) => event.execute(args));
     }
   });
+}
+
+function initExpress(app, port: number | string) {
+  app.use(
+    express.json({
+      verify: Utils.verifyDiscordRequest(process.env.PUBLIC_KEY),
+    }),
+  );
+
   app.listen(port, () => {
     console.log('Listening on port', port);
   });
 
-  const autoReply = new EventListener(client);
-  autoReply.startListening();
-  client.login(process.env.BOT_TOKEN);
+  app.post(
+    '/interactions',
+    verifyKeyMiddleware(process.env.APP_PUBLIC_KEY),
+    (req: Request, res: Response) => {
+      const { type, data } = req.body;
+
+      /**
+       * Handle verification requests
+       */
+      if (type === InteractionType.Ping) {
+        return res.send({ type: InteractionResponseType.Pong });
+      }
+
+      if (type === InteractionType.ApplicationCommand) {
+        const { name } = data;
+        switch (name) {
+          case 'test':
+            // Send a message into the channel where command was triggered from
+            return res.send({
+              type: InteractionResponseType.ChannelMessageWithSource,
+              data: {
+                content: 'hello world ' + Utils.getRandomEmoji(),
+              },
+            });
+          default:
+            return res.send({
+              type: InteractionResponseType.ChannelMessageWithSource,
+              data: {
+                content: 'Hello world',
+              },
+            });
+        }
+      }
+    },
+  );
 }
 
 main(process.argv.slice(2));

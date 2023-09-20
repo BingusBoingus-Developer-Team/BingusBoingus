@@ -1,13 +1,13 @@
 import { SlashCommandBuilder } from 'discord.js';
-import { CommandModule } from '../command/CommandModule';
+import { ACommand } from '../command.abstract';
 
-class HelloModule extends CommandModule {
+class HelloModule extends ACommand {
   data = new SlashCommandBuilder()
     .setName('hello')
     .setDescription('Hello World!');
 
   async execute(interaction) {
-    return this.runCommand(async () => {
+    return this.run(async () => {
       await interaction.reply('moin!');
     });
   }
