@@ -1,6 +1,4 @@
 export abstract class ACollectionEntry<T> {
-  // abstract readonly data: { name: string };
-
   abstract name(): string;
 
   public valid(): boolean {

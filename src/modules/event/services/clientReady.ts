@@ -8,7 +8,7 @@ export class ClientReady extends AEvent {
   async execute(c) {
     return this.run(() => {
       console.log('Successfully connected to Discord');
-      console.log(`logged in as ${c.user.tag}`);
+      console.log(`logged in as ${c.user?.tag}`);
     });
   }
 }
