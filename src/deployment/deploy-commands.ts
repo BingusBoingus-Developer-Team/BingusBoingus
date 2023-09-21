@@ -3,10 +3,10 @@ import {
   RESTPostAPIChatInputApplicationCommandsJSONBody,
   Routes,
 } from 'discord.js';
-import { CommandCollectionModule } from '../command/commandCollection';
+import { CommandModule } from '../modules/command/command.module';
 
 function loadCommands(): RESTPostAPIChatInputApplicationCommandsJSONBody[] {
-  var commands = new CommandCollectionModule().moduleList;
+  var commands = new CommandModule().modulesList;
   return commands.map((command) => command.data.toJSON());
 }
 
