@@ -1,29 +1,32 @@
-import { Client, Events, GatewayIntentBits } from 'discord.js';
+import {
+  Client,
+  Events,
+  GatewayIntentBits,
+  InteractionResponseType,
+  InteractionType,
+} from 'discord.js';
 import { config } from 'dotenv';
-import { CommandCollectionModule } from './command/commandCollection';
+import { CommandModule } from './modules/command/command.module';
+import { EventModule } from './modules/event/event.module';
+import { ExpressModule } from './modules/interaction/express.module';
 
 function main(args: string[]) {
   config();
-  const app = new Client({
-    intents: [GatewayIntentBits.Guilds],
+  const port = process.env.APP_PORT || 3000;
+
+  const client = new Client({
+    intents: [
+      GatewayIntentBits.Guilds,
+      GatewayIntentBits.GuildMessages,
+      GatewayIntentBits.MessageContent,
+    ],
   });
 
-  var commandColModule = new CommandCollectionModule();
+  new CommandModule();
+  new EventModule().init(client);
+  new ExpressModule().init(port);
 
-  app.once(Events.ClientReady, (c) => {
-    console.log('Successfully connected to Discord');
-    console.log(`logged in as ${c.user.tag}`);
-  });
-
-  app.on(Events.InteractionCreate, async (interaction) => {
-    if (!interaction.isCommand()) {
-      return;
-    }
-    const { commandName } = interaction;
-    var command = commandColModule.getCommand(commandName);
-    command?.execute(interaction);
-  });
-  app.login(process.env.BOT_TOKEN);
+  client.login(process.env.BOT_TOKEN);
 }
 
 main(process.argv.slice(2));
