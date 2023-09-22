@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { Client, GatewayIntentBits } from 'discord.js';
+import { AppConfigService } from '../../config/config.service';
 
 @Injectable()
 export class DiscordService {
   public readonly client: Client<boolean>;
 
-  constructor() {
+  constructor(configService: AppConfigService) {
     this.client = new Client({
       intents: [
         GatewayIntentBits.Guilds,
@@ -14,6 +15,6 @@ export class DiscordService {
       ],
     });
 
-    this.client.login(process.env.BOT_TOKEN);
+    this.client.login(configService.botToken);
   }
 }
