@@ -13,7 +13,7 @@ export class Interaction extends AEvent {
         return;
       }
       // const { commandName } = interaction;
-      // var command = commandColModule.getCommand(commandName);
+      // var command = getCommand(commandName);
       // command?.execute(interaction);
     });
   }
