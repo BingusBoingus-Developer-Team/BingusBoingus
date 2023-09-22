@@ -1,15 +1,15 @@
 import { Events } from 'discord.js';
 import { AEvent } from '../event.abstract';
-import { CommandModule } from '../../command/command.module';
+import { CommandService } from '../../command/command.service';
+import { Inject, Injectable } from '@nestjs/common';
 
+@Injectable()
 export class Interaction extends AEvent {
   event: Events = Events.InteractionCreate;
   once: boolean = false;
-  private commandModule: CommandModule;
 
-  constructor(commandModule: CommandModule) {
+  constructor(private readonly commandService: CommandService) {
     super();
-    this.commandModule = commandModule;
   }
 
   async execute(interaction: any) {
@@ -18,7 +18,7 @@ export class Interaction extends AEvent {
         return;
       }
       const { commandName } = interaction;
-      var command = this.commandModule.getCommand(commandName);
+      var command = this.commandService.getCommand(commandName);
       command?.execute(interaction);
     });
   }

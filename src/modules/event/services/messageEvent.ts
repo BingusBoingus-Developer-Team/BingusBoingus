@@ -1,7 +1,8 @@
+import { Injectable } from '@nestjs/common';
 import { Events, Message } from 'discord.js';
 import { AEvent } from '../event.abstract';
 import { IResponse } from '../interfaces/iresponse';
-
+@Injectable()
 export class MessageEvent extends AEvent {
   event: Events = Events.MessageCreate; // ShardEvents.Message;
   once: boolean = false;
@@ -21,7 +22,7 @@ export class MessageEvent extends AEvent {
     },
   ];
 
-  async execute(message: Message<boolean>) {
+  async execute(message: any /*Message<boolean>*/) {
     return this.run(() => {
       const { content, channel, author } = message;
       if (author.bot) return;

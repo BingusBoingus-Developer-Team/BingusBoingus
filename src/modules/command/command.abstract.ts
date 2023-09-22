@@ -1,11 +1,17 @@
 import { CacheType, Interaction, SlashCommandBuilder } from 'discord.js';
-import { ACollectionEntry } from '../../helpers/abstract/collectionEntry.abstract';
 
-export abstract class ACommand extends ACollectionEntry<
-  Interaction<CacheType>
-> {
+export abstract class ACommand {
   data: SlashCommandBuilder;
-  name(): string {
-    return this.data.name;
+
+  public abstract execute(arg: Interaction<CacheType>): Promise<boolean>;
+
+  protected async run(command: () => any): Promise<boolean> {
+    try {
+      await command();
+      return true;
+    } catch (e) {
+      console.error(e);
+      return false;
+    }
   }
 }
