@@ -1,16 +1,16 @@
+import { Injectable } from '@nestjs/common';
 import { SlashCommandBuilder } from 'discord.js';
 import { ACommand } from '../command.abstract';
 
-class CBDModule extends ACommand {
+@Injectable()
+export class HelloCommand extends ACommand {
   data = new SlashCommandBuilder()
-    .setName('cbd')
-    .setDescription('der hurensohn!');
+    .setName('hello')
+    .setDescription('Hello World!');
 
   async execute(interaction) {
     return this.run(async () => {
-      await interaction.reply('Wenn der Hurenohn nur wüsste...');
+      await interaction.reply('moin!');
     });
   }
 }
-
-export { CBDModule };

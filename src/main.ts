@@ -1,32 +1,23 @@
-import {
-  Client,
-  Events,
-  GatewayIntentBits,
-  InteractionResponseType,
-  InteractionType,
-} from 'discord.js';
-import { config } from 'dotenv';
-import { CommandModule } from './modules/command/command.module';
-import { EventModule } from './modules/event/event.module';
-import { ExpressModule } from './modules/interaction/express.module';
+import { INestApplication } from '@nestjs/common';
+import { Reflector } from '@nestjs/core';
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { AppConfigService } from './config/config.service';
 
-function main(args: string[]) {
-  config();
-  const port = process.env.APP_PORT || 3000;
-
-  const client = new Client({
-    intents: [
-      GatewayIntentBits.Guilds,
-      GatewayIntentBits.GuildMessages,
-      GatewayIntentBits.MessageContent,
-    ],
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule, {
+    cors: true,
+    logger: ['log', 'error', 'warn', 'debug', 'verbose'],
   });
 
-  var commandModule = new CommandModule();
-  new EventModule(commandModule).init(client);
-  new ExpressModule().init(port);
+  const appConfig: AppConfigService = app.get(AppConfigService);
 
-  client.login(process.env.BOT_TOKEN);
+  app.setGlobalPrefix('api/v1');
+  app.useGlobalInterceptors(app.get(Reflector));
+
+  await app.startAllMicroservices();
+
+  await app.listen(appConfig.port);
 }
 
-main(process.argv.slice(2));
+bootstrap();
