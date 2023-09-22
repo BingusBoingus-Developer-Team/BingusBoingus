@@ -22,8 +22,8 @@ function main(args: string[]) {
     ],
   });
 
-  new CommandModule();
-  new EventModule().init(client);
+  var commandModule = new CommandModule();
+  new EventModule(commandModule).init(client);
   new ExpressModule().init(port);
 
   client.login(process.env.BOT_TOKEN);
