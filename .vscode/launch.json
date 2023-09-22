@@ -10,11 +10,10 @@
             "name": "start:dev",
             "runtimeExecutable": "npm",
             "console": "integratedTerminal",
-            "preLaunchTask": "npm: build",
             "envFile": "${workspaceFolder}/.env",
             "runtimeArgs": [
                 "run-script",
-                "start"
+                "start:debug"
             ],
             "skipFiles": [
                 "<node_internals>/**"
@@ -26,47 +25,14 @@
             "name": "start:dev:Lukas",
             "runtimeExecutable": "npm",
             "console": "integratedTerminal",
-            "preLaunchTask": "npm: build",
             "envFile": "${workspaceFolder}/.env.Lukas",
             "runtimeArgs": [
                 "run-script",
-                "start"
+                "start:debug"
             ],
             "skipFiles": [
                 "<node_internals>/**"
             ]
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "deploy-commands:dev:Lukas",
-            "runtimeExecutable": "npm",
-            "console": "integratedTerminal",
-            "preLaunchTask": "npm: build",
-            "envFile": "${workspaceFolder}/.env.Lukas",
-            "runtimeArgs": [
-                "run-script",
-                "deploy-commands"
-            ],
-            "skipFiles": [
-                "<node_internals>/**"
-            ]
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "deploy-commands:dev:",
-            "runtimeExecutable": "npm",
-            "console": "integratedTerminal",
-            "preLaunchTask": "npm: build",
-            "envFile": "${workspaceFolder}/.env",
-            "runtimeArgs": [
-                "run-script",
-                "deploy-commands"
-            ],
-            "skipFiles": [
-                "<node_internals>/**"
-            ]
-        },
+        }
     ]
 }
