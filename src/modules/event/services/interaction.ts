@@ -14,7 +14,6 @@ export class Interaction extends AEvent {
 
   async execute(interaction: any) {
     return this.run(() => {
-      console.log('hello');
       if (!interaction.isCommand()) {
         return;
       }
