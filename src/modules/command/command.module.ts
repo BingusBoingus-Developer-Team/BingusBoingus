@@ -1,17 +1,11 @@
-import { ACommand } from './command.abstract';
-import { HelloModule } from './services/hello';
-import { ACollectionModule } from '../../helpers/abstract/collection.module.abstract';
-import { CacheType, Interaction } from 'discord.js';
-import { PingPongModule } from './services/pingpong';
-import { CBDModule } from './services/cbd';
+import { Module } from '@nestjs/common';
+import { CommandService } from './command.service';
+import { PingPongCommand } from './commands/pingpong';
+import { HelloCommand } from './commands/hello';
+import { CBDCommand } from './commands/cbd';
 
-export class CommandModule extends ACollectionModule<
-  Interaction<CacheType>,
-  ACommand
-> {
-  constructor() {
-    const moduleList: ACommand[] = [new PingPongModule(), new HelloModule(), new CBDModule()];
-
-    super(moduleList);
-  }
-}
+@Module({
+  providers: [CommandService, PingPongCommand, HelloCommand, CBDCommand],
+  exports: [CommandService],
+})
+export class CommandModule {}
