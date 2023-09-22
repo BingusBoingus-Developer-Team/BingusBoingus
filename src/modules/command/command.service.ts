@@ -30,4 +30,8 @@ export class CommandService {
     if (this.commands.has(commandName)) return this.commands.get(commandName);
     return null;
   }
+
+  getAllCommands() {
+    return this.commands;
+  }
 }

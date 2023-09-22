@@ -7,8 +7,7 @@
     "deldist": "rimraf dist",
     "build": "npm run deldist && tsc -p .",
     "start": "ts-node src/main.ts",
-    "tunnel": "ngrok http 3000",
-    "deploy-commands": "ts-node src/deployment/deploy-commands.ts"
+    "tunnel": "ngrok http 3000"
   },
   "repository": {
     "type": "git",
