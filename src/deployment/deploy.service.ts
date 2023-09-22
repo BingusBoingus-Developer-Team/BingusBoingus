@@ -9,7 +9,8 @@ import { CommandService } from '../modules/command/command.service';
 @Injectable()
 export class DeployServcice {
   constructor(private readonly commandService: CommandService) {
-    this.deployCommands();
+    var commands = this.loadCommands();
+    this.deployCommands(commands);
   }
 
   loadCommands(): RESTPostAPIChatInputApplicationCommandsJSONBody[] {
@@ -17,33 +18,33 @@ export class DeployServcice {
     return commands.map((command) => command.data.toJSON());
   }
 
-  deployCommands() {
-    const commands = this.loadCommands();
-
+  async deployCommands(
+    commands: RESTPostAPIChatInputApplicationCommandsJSONBody[],
+  ) {
     // Construct and prepare an instance of the REST module
     const rest = new REST().setToken(process.env.BOT_TOKEN);
 
     // and deploy your commands!
-    (async () => {
-      try {
-        console.log(
-          `Started refreshing ${commands.length} application (/) commands.`,
-        );
+    try {
+      console.log(
+        `Started refreshing ${commands.length} application (/) commands.`,
+      );
 
-        // The put method is used to fully refresh all commands in the guild with the current set
-        const data = await rest.put(
-          Routes.applicationGuildCommands(
-            process.env.CLIENT_ID,
-            process.env.SERVER_ID,
-          ),
-          { body: commands },
-        );
+      // The put method is used to fully refresh all commands in the guild with the current set
+      const data = await rest.put(
+        Routes.applicationGuildCommands(
+          process.env.CLIENT_ID,
+          process.env.SERVER_ID,
+        ),
+        { body: commands },
+      );
 
-        console.log(`Successfully reloaded ${data} application (/) commands.`);
-      } catch (error) {
-        // And of course, make sure you catch and log any errors!
-        console.error(error);
-      }
-    })();
+      var log = '';
+      if (Array.isArray(data)) log = data.length + ' ';
+      console.log(`Successfully reloaded ${log}application (/) commands.`);
+    } catch (error) {
+      // And of course, make sure you catch and log any errors!
+      console.error(error);
+    }
   }
 }
