@@ -7,7 +7,8 @@
     "deldist": "rimraf dist",
     "build": "npm run deldist && tsc -p .",
     "start": "ts-node src/main.ts",
-    "tunnel": "ngrok http 3000"
+    "tunnel": "ngrok http 3000",
+    "start:debug": "nest start --debug --watch"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "ngrok": "^5.0.0-beta.2",
     "node-fetch": "^3.3.2",
     "rimraf": "^5.0.1",
+    "source-map-support": "^0.5.21",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
