@@ -3,7 +3,7 @@ services:
   bingusboingus:
     hostname: bingusboingus
     pull_policy: always
-    image: ghcr.io/blvckleg/bingusboingus:merge
+    image: ghcr.io/blvckleg/bingusboingus:dev
     volumes:
       - .env:/home/node/.env.prod
     environment:
