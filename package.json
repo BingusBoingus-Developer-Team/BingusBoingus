@@ -9,7 +9,9 @@
     "start": "ts-node src/main.ts",
     "tunnel": "ngrok http 3000",
     "start:debug": "nest start --debug --watch",
-    "build-prod": "docker build --pull --rm -f \"dockerfiles\\Dockerfile.prod\" -t bingusboingus:latest \".\"",
+    "build:prod": "docker build --pull --rm -f \"dockerfiles\\Dockerfile.prod\" -t bingusboingus:latest \".\"",
+    "build:test": "docker build --pull --rm -f \"dockerfiles\\Dockerfile.test\" -t bingusboingus:test \".\"",
+    "test:image": "docker run bingusboingus:test npm run test",
     "test": "jest",
     "test:watch": "jest --watch"
   },
