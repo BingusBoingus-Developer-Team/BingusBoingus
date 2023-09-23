@@ -14,4 +14,8 @@ describe('MessageEvent', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('check workflow fail', () => {
+    fail();
+  });
 });
