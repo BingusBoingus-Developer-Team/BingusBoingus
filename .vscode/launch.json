@@ -18,21 +18,6 @@
             "skipFiles": [
                 "<node_internals>/**"
             ]
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "start:dev:Lukas",
-            "runtimeExecutable": "npm",
-            "console": "integratedTerminal",
-            "envFile": "${workspaceFolder}/.env.Lukas",
-            "runtimeArgs": [
-                "run-script",
-                "start:debug"
-            ],
-            "skipFiles": [
-                "<node_internals>/**"
-            ]
         }
     ]
 }

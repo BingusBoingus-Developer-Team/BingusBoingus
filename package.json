@@ -8,7 +8,8 @@
     "build": "npm run deldist && tsc -p .",
     "start": "ts-node src/main.ts",
     "tunnel": "ngrok http 3000",
-    "start:debug": "nest start --debug --watch"
+    "start:debug": "nest start --debug --watch",
+    "build-prod": "docker build --pull --rm -f \"dockerfiles\\Dockerfile.prod\" -t bingusboingus:latest \".\""
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,13 @@
+version: '3'
+services:
+  bingusboingus:
+    hostname: bingusboingus
+    pull_policy: always
+    image: ghcr.io/blvckleg/bingusboingus:dev
+    volumes:
+      - .env:/home/node/.env.prod
+    environment:
+      NODE_ENV: prod
+    ports:
+      - 3000:3000
+    restart: unless-stopped
