@@ -5,9 +5,10 @@ import { HelloCommand } from './commands/hello';
 import { CBDCommand } from './commands/cbd';
 import { ReportedCommand } from './commands/reported';
 import { BugReport } from './commands/bug';
+import { CoinflipCommand } from './commands/coinflip';
 
 @Module({
-  providers: [CommandService, PingPongCommand, HelloCommand, CBDCommand, ReportedCommand, BugReport],
+  providers: [CommandService, PingPongCommand, HelloCommand, CBDCommand, ReportedCommand, BugReport, CoinflipCommand],
   exports: [CommandService],
 })
 export class CommandModule {}
