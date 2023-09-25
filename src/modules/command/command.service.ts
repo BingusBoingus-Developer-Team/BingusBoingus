@@ -4,6 +4,7 @@ import { PingPongCommand } from './commands/pingpong';
 import { CBDCommand } from './commands/cbd';
 import { HelloCommand } from './commands/hello';
 import { ACommand } from './command.abstract';
+import { ReportedCommand } from './commands/reported';
 
 @Injectable()
 export class CommandService {
@@ -13,8 +14,9 @@ export class CommandService {
     pingpongModule: PingPongCommand,
     helloModule: HelloCommand,
     cbdModule: CBDCommand,
+    reportedModule: ReportedCommand,
   ) {
-    const commands: ACommand[] = [pingpongModule, helloModule, cbdModule];
+    const commands: ACommand[] = [pingpongModule, helloModule, cbdModule, reportedModule];
     commands.forEach((command) => {
       if (command.data.name && command.execute) {
         console.log('command-name: ' + command.data.name);
