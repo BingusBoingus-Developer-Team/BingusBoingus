@@ -10,6 +10,9 @@ node_modules/
 
 ## dotenv environment file(s)
 
-.env
+.env*
+!.env.sample*
 
+tsconfig.tsbuildinfo
+tsconfig.build.tsbuildinfo
 bingusboingus.code-workspace

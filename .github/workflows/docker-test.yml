@@ -1,0 +1,40 @@
+name: Docker-test Image CI
+
+on:
+  push:
+    branches: ['dev']
+  pull_request:
+    branches: ['dev']
+
+env:
+  IMAGE_NAME: bingusboingus
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build image
+        run: docker build --pull --rm -f "dockerfiles/Dockerfile.test" --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}" .
+      - name: Run tests
+        run: docker run bingusboingus npm run test
+    #   - name: Log in to registry
+    #     run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+    # - name: Push image
+    #   run: |
+    #     IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+
+    #     IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+
+    #     VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+
+    #     [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+
+    #     [ "$VERSION" == "master" ] && VERSION=latest
+    #     echo IMAGE_ID=$IMAGE_ID
+    #     echo VERSION=$VERSION-test
+    #     docker tag $IMAGE_NAME $IMAGE_ID:$VERSION-test
+    #     docker push $IMAGE_ID:$VERSION-test
