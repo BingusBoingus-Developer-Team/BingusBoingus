@@ -13,7 +13,7 @@ export class MessageEvent extends AEvent {
       response: 'wagwan2',
     },
     {
-      matcher: /^.{150,}$/,
+      matcher: /^.{150,}$/m,
       response: 'halbe Bibel, ganzer huansohn ?XD',
     },
     {
