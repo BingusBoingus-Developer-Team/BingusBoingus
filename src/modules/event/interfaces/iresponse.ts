@@ -1,4 +1,4 @@
 export interface IResponse {
   matcher: RegExp;
-  response: string;
+  response: string | Object;
 }

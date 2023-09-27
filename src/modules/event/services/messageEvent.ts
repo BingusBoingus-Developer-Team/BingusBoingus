@@ -13,12 +13,32 @@ export class MessageEvent extends AEvent {
       response: 'wagwan2',
     },
     {
-      matcher: /^.{150,}$/,
+      matcher: /^.{150,}$/m,
       response: 'halbe Bibel, ganzer huansohn ?XD',
     },
     {
-      matcher: /http:\/\/.*/,
+      matcher: /https:\/\/.*/,
       response: 'send yo virus link to someone else no?xd',
+    },
+    {
+      matcher: /wadim/i,
+      response: '#goth',
+    },
+    {
+      matcher: /digga/i,
+      response: 'digga mich nicht',
+    },
+    {
+      matcher: /alina/i,
+      response: 'Schuhgröße 36, weißer Nagellack 🥵',
+    },
+    {
+      matcher: /monke/i,
+      response: '🐒 🦧',
+    },
+    {
+      matcher: /hego/i,
+      response: { files: ['src/assets/textbox-donowall.gif'] },
     },
   ];
 
