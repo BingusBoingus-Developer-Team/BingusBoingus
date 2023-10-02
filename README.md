@@ -1,5 +1,7 @@
 Status: In Development 🛠️
 
+Latest: 0.0.1
+
 🤖 Description:
 
 BingusBoingus is the bot you never knew you needed, mainly because it doesn't exist yet! This Discord bot repository is currently just a twinkle in the eyes of our imaginary developers. With BingusBoingus, expect the unexpected, and prepare for some hilariously quirky and utterly pointless commands that will make you wonder, "Why does this bot even exist?"
