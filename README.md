@@ -8,8 +8,6 @@ BingusBoingus is the bot you never knew you needed, mainly because it doesn't ex
 
 🪄 Features (not really):
 
-Commandless Command: Our bot's most advanced feature is the absence of commands. Yes, you read that right; it does nothing, and it does it superbly... Because it doesn't exist yet
-
 Random Responses: BingusBoingus excels at delivering responses that are both baffling and comical. Ask it a question, and you might get a recipe for mashed potatoes in return.
 
 Virtual Tea Party: Join the bot in its daily virtual tea party where it discusses the weather with itself.
@@ -42,3 +40,5 @@ This repository follows a structured Git branching workflow:
 - Merge: Approved changes are merged into the dev branch.
 
 This workflow ensures organized and collaborative development.
+
+Built with [NestJs](https://github.com/nestjs)
