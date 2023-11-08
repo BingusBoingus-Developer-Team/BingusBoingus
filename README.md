@@ -33,12 +33,14 @@ Stay tuned for more updates on BingusBoingus, the Discord bot that's sillier tha
 This repository follows a structured Git branching workflow:
 
 - Branch Creation: Start a new branch for each feature or bug fix.
-- [Commits](CONTRIBUTING.md#git-commit-type): Make changes and commit with clear messages following the conventional commit messages.
-- [Pull Request](CONTRIBUTING.md#submitting-a-pull-request): Create a PR to merge changes, explaining the purpose.
+- Commits: Make changes and commit with clear messages following the conventional commit messages.
+- Pull Request: Create a PR to merge changes, explaining the purpose.
 - Review: Collaborators review code, provide feedback.
 - Iterations: Address feedback, make necessary adjustments.
 - Merge: Approved changes are merged into the dev branch.
 
 This workflow ensures organized and collaborative development.
+
+for more information on contributing and conventional commits please visit the [Github Contributing Docs.](https://github.com/github/docs/blob/main/CONTRIBUTING.md)
 
 Built with [NestJs](https://github.com/nestjs)
