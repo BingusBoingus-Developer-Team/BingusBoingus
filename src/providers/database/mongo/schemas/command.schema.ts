@@ -24,8 +24,8 @@ export const CommandSchema: Schema = new Schema(
       required: true,
     },
     responseType: {
-      type: ResponseType,
-      required: false,
+      type: String,
+      enum: Object.values(ResponseType),
       default: ResponseType.reply,
     },
   },

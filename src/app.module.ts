@@ -4,6 +4,7 @@ import { DiscordModule } from './modules/discord/discord.module';
 import { CommandModule } from './modules/command/command.module';
 import { EventModule } from './modules/event/event.module';
 import { DeployModule } from './deployment/deploy.module';
+import { MongoDatabaseProviderModule } from './providers/database/mongo/mongo-provider.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { DeployModule } from './deployment/deploy.module';
     CommandModule,
     DeployModule,
     EventModule,
+    MongoDatabaseProviderModule,
   ],
 })
 export class AppModule {}
