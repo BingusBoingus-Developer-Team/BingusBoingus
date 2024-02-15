@@ -1,12 +1,12 @@
 Status: In Development 🛠️
 
+Latest: 0.0.1
+
 🤖 Description:
 
 BingusBoingus is the bot you never knew you needed, mainly because it doesn't exist yet! This Discord bot repository is currently just a twinkle in the eyes of our imaginary developers. With BingusBoingus, expect the unexpected, and prepare for some hilariously quirky and utterly pointless commands that will make you wonder, "Why does this bot even exist?"
 
 🪄 Features (not really):
-
-Commandless Command: Our bot's most advanced feature is the absence of commands. Yes, you read that right; it does nothing, and it does it superbly... Because it doesn't exist yet
 
 Random Responses: BingusBoingus excels at delivering responses that are both baffling and comical. Ask it a question, and you might get a recipe for mashed potatoes in return.
 
@@ -33,10 +33,14 @@ Stay tuned for more updates on BingusBoingus, the Discord bot that's sillier tha
 This repository follows a structured Git branching workflow:
 
 - Branch Creation: Start a new branch for each feature or bug fix.
-- [Commits](CONTRIBUTING.md#git-commit-type): Make changes and commit with clear messages following the conventional commit messages.
-- [Pull Request](CONTRIBUTING.md#submitting-a-pull-request): Create a PR to merge changes, explaining the purpose.
+- Commits: Make changes and commit with clear messages following the conventional commit messages.
+- Pull Request: Create a PR to merge changes, explaining the purpose.
 - Review: Collaborators review code, provide feedback.
 - Iterations: Address feedback, make necessary adjustments.
 - Merge: Approved changes are merged into the dev branch.
 
 This workflow ensures organized and collaborative development.
+
+for more information on contributing and conventional commits please visit the [Github Contributing Docs.](https://github.com/github/docs/blob/main/CONTRIBUTING.md)
+
+Built with [NestJs](https://github.com/nestjs)

@@ -1,6 +1,4 @@
 import { Events } from 'discord.js';
-import { ACollectionEntry } from '../../helpers/abstract/collectionEntry.abstract';
-import { DiscordService } from '../discord/discord.service';
 
 export abstract class AEvent {
   abstract readonly event: Events;
