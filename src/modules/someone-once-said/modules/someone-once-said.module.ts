@@ -1,19 +1,22 @@
 import { Module } from '@nestjs/common';
-import { SomeoneOnceSaidSchema } from '../../../schemas/someone-once-said.schema';
 import { MongooseModule } from '@nestjs/mongoose';
-import { SomeoneOnceSaid } from '../services/someone-once-said.service';
+import { SomeoneOnceSaidService } from '../services/someone-once-said.service';
+import {
+  SomeoneOnceSaid,
+  SomeoneOnceSaidSchema,
+} from '../../../schemas/someone-once-said.schema';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       {
-        name: 'SomeneOnceSaid',
+        name: SomeoneOnceSaid.name,
         schema: SomeoneOnceSaidSchema,
       },
     ]),
   ],
   controllers: [],
-  providers: [SomeoneOnceSaid],
-  exports: [SomeoneOnceSaid],
+  providers: [SomeoneOnceSaidService],
+  exports: [SomeoneOnceSaidService],
 })
-export class ProductionOrderStatisticModule {}
+export class SomeoneOnceSaidModule {}

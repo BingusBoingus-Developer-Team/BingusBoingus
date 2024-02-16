@@ -1,4 +1,4 @@
-export class QuoteEntity {
+export class SomeoneOnceSaidEntity {
   phrase: string;
   username: string;
   secName?: string;

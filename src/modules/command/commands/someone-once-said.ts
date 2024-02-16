@@ -1,8 +1,13 @@
-import { CacheType, CommandInteraction, EmbedBuilder } from 'discord.js';
+import {
+  CacheType,
+  CommandInteraction,
+  EmbedBuilder,
+  SlashCommandBuilder,
+} from 'discord.js';
 import { ACommand } from '../command.abstract';
-import { SomeoneOnceSaid } from '../../../schemas/someone-once-said.schema';
 import { SomeoneOnceSaidService } from '../../someone-once-said/services/someone-once-said.service';
 import { Inject } from '@nestjs/common';
+import { SomeoneOnceSaid } from '../../../schemas/someone-once-said.schema';
 
 export default class SomeoneOnceSaidCommand extends ACommand {
   constructor(
@@ -11,6 +16,9 @@ export default class SomeoneOnceSaidCommand extends ACommand {
   ) {
     super();
   }
+  data = new SlashCommandBuilder()
+    .setName('Quote')
+    .setDescription('Make it a quote');
 
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     let phrase = arg.options.get('phrase');

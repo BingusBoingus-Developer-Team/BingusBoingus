@@ -1,13 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { Collection } from 'discord.js';
-import { PingPongCommand } from './commands/pingpong';
 import { CBDCommand } from './commands/cbd';
-import { HelloCommand } from './commands/hello';
 import { ACommand } from './command.abstract';
 import { ReportedCommand } from './commands/reported';
 import { BugReport } from './commands/bug';
 import { CoinflipCommand } from './commands/coinflip';
 import { GoldCommand } from './commands/gold';
+import SomeoneOnceSaidCommand from './commands/someone-once-said';
 
 @Injectable()
 export class CommandService {
@@ -21,6 +20,7 @@ export class CommandService {
     bugReportModule: BugReport,
     coinflipModule: CoinflipCommand,
     goldModule: GoldCommand,
+    someoneOnceSaidModule: SomeoneOnceSaidCommand,
   ) {
     const commands: ACommand[] = [
       //pingpongModule,
@@ -30,6 +30,7 @@ export class CommandService {
       bugReportModule,
       coinflipModule,
       goldModule,
+      someoneOnceSaidModule,
     ];
     commands.forEach((command) => {
       if (command.data.name && command.execute) {

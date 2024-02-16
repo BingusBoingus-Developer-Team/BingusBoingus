@@ -1,15 +1,17 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Error } from 'mongoose';
-import { QuoteEntity } from '../../../schemas/someone-once-said-entity.model';
+import { SomeoneOnceSaidEntity } from '../../../schemas/someone-once-said-entity.model';
 import { SomeoneOnceSaidDocument } from '../../../schemas/someone-once-said.schema';
 
 export class SomeoneOnceSaidService {
   constructor(
-    @InjectModel('SomeneOnceSaid')
+    @InjectModel('SomeoneOnceSaid')
     private readonly someoneOnceSaid: Model<SomeoneOnceSaidDocument>,
   ) {}
 
-  async create(quoteDto: QuoteEntity): Promise<SomeoneOnceSaidDocument> {
+  async create(
+    quoteDto: SomeoneOnceSaidEntity,
+  ): Promise<SomeoneOnceSaidDocument> {
     try {
       return await this.someoneOnceSaid.create({
         phrase: quoteDto.phrase,
