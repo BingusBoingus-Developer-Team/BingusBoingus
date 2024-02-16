@@ -9,6 +9,7 @@ import { CoinflipCommand } from './commands/coinflip';
 import { GoldCommand } from './commands/gold';
 import SomeoneOnceSaidCommand from './commands/someone-once-said';
 import { SomeoneOnceSaidModule } from '../someone-once-said/modules/someone-once-said.module';
+import GetRandomQuote from './commands/get-a-quote';
 
 @Module({
   providers: [
@@ -21,6 +22,7 @@ import { SomeoneOnceSaidModule } from '../someone-once-said/modules/someone-once
     CoinflipCommand,
     GoldCommand,
     SomeoneOnceSaidCommand,
+    GetRandomQuote,
   ],
   imports: [SomeoneOnceSaidModule],
   exports: [CommandService],

@@ -6,7 +6,9 @@ import {
 } from 'discord.js';
 
 export abstract class ACommand {
-  data: SlashCommandBuilder;
+  data:
+    | SlashCommandBuilder
+    | Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>;
 
   public abstract execute(
     arg: Interaction<CacheType> | CommandInteraction<CacheType>,

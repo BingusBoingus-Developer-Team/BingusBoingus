@@ -17,8 +17,11 @@ export default class SomeoneOnceSaidCommand extends ACommand {
     super();
   }
   data = new SlashCommandBuilder()
-    .setName('Quote')
-    .setDescription('Make it a quote');
+    .setName('quote')
+    .setDescription('Make it a quote')
+    .addStringOption((option) =>
+      option.setName('phrase').setDescription('What was said'),
+    );
 
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     let phrase = arg.options.get('phrase');
