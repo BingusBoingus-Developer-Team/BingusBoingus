@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.0.1...v1.1.0) (2024-02-16)
+
+
+### Features
+
+* **workflow:** tag release to latest ([f459305](https://github.com/Blvckleg/BingusBoingus/commit/f4593052f20a334a6c5fece52632835f94e86e7e))
+
 ## [1.0.1](https://github.com/Blvckleg/BingusBoingus/compare/v1.0.0...v1.0.1) (2024-02-16)
 
 
