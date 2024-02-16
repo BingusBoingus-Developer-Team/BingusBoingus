@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Blvckleg/BingusBoingus/compare/v1.1.0...v1.1.1) (2024-02-16)
+
+
+### Bug Fixes
+
+* return after sending ([8980eeb](https://github.com/Blvckleg/BingusBoingus/commit/8980eeb4c010dfd6320e03b0b6ac583532172472))
+
 ## [1.1.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.0.1...v1.1.0) (2024-02-16)
 
 
