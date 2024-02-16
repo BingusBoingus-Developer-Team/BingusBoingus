@@ -50,5 +50,6 @@ export default class SomeoneOnceSaidCommand extends ACommand {
       })
       .setTimestamp(created.createdAt);
     arg.channel.send({ embeds: [quoteEmbed] });
+    return true;
   }
 }
