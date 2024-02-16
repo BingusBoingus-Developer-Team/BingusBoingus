@@ -1,13 +1,12 @@
 ---
-name: Custom issue template
-about: Describe this issue template's purpose here.
+name: Question
+about: I have a question about the bots functionality.
 title: ''
 labels: discussion, question
 assignees: ''
-
 ---
 
-**My Question is:*
+\*_My Question is:_
 Your Question about BingusBoingus.
 
 **What I've tried so far**
