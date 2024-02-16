@@ -16,3 +16,4 @@ node_modules/
 tsconfig.tsbuildinfo
 tsconfig.build.tsbuildinfo
 bingusboingus.code-workspace
+.vscode/settings.*
