@@ -11,3 +11,31 @@ services:
     ports:
       - 3000:3000
     restart: unless-stopped
+
+  mongo:
+    image: mongo:6.0.3
+    hostname: mongo
+    volumes:
+      - ./infra/mongo:/db/data:rw
+      - ./infra/mongo/mongo.conf:/etc/mongo/mongo.conf:ro
+      - ./infra/mongo/init.js:/docker-entrypoint-initdb.d/init.js:ro
+    env_file:
+      - ./infra/mongo/.env
+    command:
+      - --config
+      - /etc/mongo/mongo.conf
+    ports:
+      - 27017:27017
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'sh',
+          '-c',
+          'echo ''db.runCommand("ping").ok'' | mongosh localhost:27017 --quiet',
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    restart: unless-stopped
