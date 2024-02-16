@@ -11,6 +11,8 @@ services:
     ports:
       - 3000:3000
     restart: unless-stopped
+    networks:
+      - mongo
 
   mongo:
     image: mongo:6.0.3
@@ -24,18 +26,24 @@ services:
     command:
       - --config
       - /etc/mongo/mongo.conf
-    ports:
-      - 27017:27017
+    expose:
+      - 27017
     healthcheck:
       test:
         [
           'CMD',
           'sh',
           '-c',
-          'echo ''db.runCommand("ping").ok'' | mongosh localhost:27017 --quiet',
+          'echo ''db.runCommand("ping").ok'' | mongosh localhost:27017 --quiet'
         ]
       interval: 10s
       timeout: 10s
       retries: 5
       start_period: 40s
     restart: unless-stopped
+    networks:
+      - mongo
+
+networks:
+  mongo:
+    name: mongo
