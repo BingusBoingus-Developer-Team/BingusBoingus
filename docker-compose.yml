@@ -16,11 +16,11 @@ services:
     image: mongo:6.0.3
     hostname: mongo
     volumes:
-      - mongo:/db/data:rw
-      - ./mongo/mongo.conf:/etc/mongo/mongo.conf:ro
-      - ./mongo/init.js:/docker-entrypoint-initdb.d/init.js:ro
+      - ./infra/mongo:/db/data:rw
+      - ./infra/mongo/mongo.conf:/etc/mongo/mongo.conf:ro
+      - ./infra/mongo/init.js:/docker-entrypoint-initdb.d/init.js:ro
     env_file:
-      - ./mongo/.env
+      - ./infra/mongo/.env
     command:
       - --config
       - /etc/mongo/mongo.conf
@@ -39,5 +39,3 @@ services:
       retries: 5
       start_period: 40s
     restart: unless-stopped
-    networks:
-      - mongo
