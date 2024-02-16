@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/Blvckleg/BingusBoingus/compare/v1.0.0...v1.0.1) (2024-02-16)
+
+
+
+### Bug Fixes
+
+* **workflows:** i think this should do it ([141f4f2](https://github.com/Blvckleg/BingusBoingus/commit/141f4f2b51d49abbadf20d59df24585bce12dfe2))
+
 ## 1.0.0 (2024-02-15)
 
 ### Features
