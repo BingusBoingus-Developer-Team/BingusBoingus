@@ -1,0 +1,36 @@
+import {
+  CacheType,
+  CommandInteraction,
+  EmbedBuilder,
+  SlashCommandBuilder,
+} from 'discord.js';
+import { ACommand } from '../command.abstract';
+import { SomeoneOnceSaidService } from '../../someone-once-said/services/someone-once-said.service';
+import { Inject } from '@nestjs/common';
+
+export default class GetRandomQuote extends ACommand {
+  constructor(
+    @Inject(SomeoneOnceSaidService)
+    private readonly someoneonceSaidService: SomeoneOnceSaidService,
+  ) {
+    super();
+  }
+  data = new SlashCommandBuilder()
+    .setName('randomquote')
+    .setDescription('get a random quote of a user');
+
+  async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
+    const someoneOnceSaid = await this.someoneonceSaidService.getRandomQuote();
+    if (!someoneOnceSaid) return;
+    const quoteEmbed = new EmbedBuilder()
+      .setTitle(
+        `${someoneOnceSaid.secName ?? someoneOnceSaid.username} once said 🤓`,
+      )
+      .setDescription(someoneOnceSaid.phrase)
+      .setFooter({
+        text: someoneOnceSaid?.secName ?? someoneOnceSaid.username,
+      })
+      .setTimestamp(someoneOnceSaid.createdAt);
+    arg.reply({ embeds: [quoteEmbed] });
+  }
+}
