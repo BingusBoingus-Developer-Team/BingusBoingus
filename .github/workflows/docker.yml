@@ -39,7 +39,7 @@ jobs:
 
           if [[ $VERSION =~ ^[0-9]+.[0-9]+.[0-9]+$ ]]; then
             docker tag $IMAGE_ID:$VERSION $IMAGE_ID:latest
-            docker push $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:latest
           fi
 
         # build repoUrl
