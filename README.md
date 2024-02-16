@@ -1,6 +1,6 @@
 Status: In Development 🛠️
 
-Latest: 1.0.0
+Latest: 1.1.0
 
 🤖 Description:
 
