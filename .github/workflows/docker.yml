@@ -2,7 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: ['master', 'dev']
+    branches: ['dev']
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 env:
   IMAGE_NAME: bingusboingus
