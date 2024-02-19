@@ -8,13 +8,13 @@ BingusBoingus is the bot you never knew you needed, mainly because it not really
 
 🪄 Features:
 
-Random Responses: BingusBoingus excels at delivering responses that are both baffling and comical.
+- Random Responses: BingusBoingus excels at delivering responses that are both baffling and comical.
 
-Coinflip: Ask Bingus to toss a coin for you. It might land on heads. It might land on tails. Or it might...
+- Coinflip: Ask Bingus to toss a coin for you. It might land on heads. It might land on tails. Or it might...
 
-Saving Quotes: BingusBoingus is able to save quotes in a database.
+- Saving Quotes: BingusBoingus is able to save quotes in a database.
 
-404 Error: This bot's purpose is as elusive as a unicorn, so prepare to have your expectations shattered.
+- 404 Error: This bot's purpose is as elusive as a unicorn, so prepare to have your expectations shattered.
 
 And more....
 
