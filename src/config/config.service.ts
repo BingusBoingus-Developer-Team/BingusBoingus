@@ -9,7 +9,7 @@ import { ConfigService } from '@nestjs/config';
 export class AppConfigService {
   constructor(private configService: ConfigService) {}
 
-  get port(): number {
+  get appPort(): number {
     return Number(this.configService.get<number>('app.port'));
   }
   get botToken(): string {
