@@ -5,7 +5,7 @@ import {
   SlashCommandBuilder,
 } from 'discord.js';
 import { ACommand } from '../command.abstract';
-import { SomeoneOnceSaidService } from '../../someone-once-said/services/someone-once-said.service';
+import { SomeoneOnceSaidService } from '../../someone-once-said/service/someone-once-said.service';
 import { Inject } from '@nestjs/common';
 import { SomeoneOnceSaid } from '../../../schemas/someone-once-said.schema';
 

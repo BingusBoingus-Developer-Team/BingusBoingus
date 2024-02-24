@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Interaction } from './interaction';
 import { CommandService } from '../../command/command.service';
+import { PollService } from '../../poll/service/poll.service';
 
 describe('Interaction', () => {
   var service: Interaction;
@@ -10,6 +11,10 @@ describe('Interaction', () => {
       providers: [Interaction,
       {
         provide: CommandService,
+        useValue: {}
+      },
+      {
+        provide: PollService,
         useValue: {}
       }],
     }).compile();
