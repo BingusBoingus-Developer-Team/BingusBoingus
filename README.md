@@ -1,7 +1,3 @@
-Status: In Development 🛠️
-
-Latest: 1.1.0
-
 🤖 Description:
 
 BingusBoingus is the bot you never knew you needed, mainly because it not really useful and just very silly instead! With BingusBoingus, expect the unexpected, and prepare for some hilariously quirky and utterly pointless commands that will make you wonder, "Why does this bot even exist?"
