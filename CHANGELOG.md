@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.2](https://github.com/Blvckleg/BingusBoingus/compare/v1.1.1...v1.1.2) (2024-02-24)
+
+
+### Bug Fixes
+
+* compose mount ([fb3caec](https://github.com/Blvckleg/BingusBoingus/commit/fb3caec1048d133f6362076b5a15e15d59ba72b6))
+* **poll:** token timeout ([36d2c83](https://github.com/Blvckleg/BingusBoingus/commit/36d2c83a938e6fc064751a30dafaa85e1980c10f))
+
 ## [1.1.1](https://github.com/Blvckleg/BingusBoingus/compare/v1.1.0...v1.1.1) (2024-02-16)
 
 
