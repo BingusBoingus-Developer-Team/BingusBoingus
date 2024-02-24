@@ -8,6 +8,7 @@ import { CoinflipCommand } from './commands/coinflip';
 import { GoldCommand } from './commands/gold';
 import SomeoneOnceSaidCommand from './commands/someone-once-said';
 import GetRandomQuote from './commands/get-a-quote';
+import { PollCommand } from './commands/poll';
 
 @Injectable()
 export class CommandService {
@@ -23,6 +24,7 @@ export class CommandService {
     goldModule: GoldCommand,
     someoneOnceSaidModule: SomeoneOnceSaidCommand,
     getRandomQuoteModule: GetRandomQuote,
+    pollModule: PollCommand
   ) {
     const commands: ACommand[] = [
       //pingpongModule,
@@ -34,6 +36,7 @@ export class CommandService {
       goldModule,
       someoneOnceSaidModule,
       getRandomQuoteModule,
+      pollModule
     ];
     commands.forEach((command) => {
       if (command.data.name && command.execute) {
