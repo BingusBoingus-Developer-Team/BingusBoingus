@@ -45,6 +45,7 @@ export class Interaction extends AEvent {
               (member) => member != interaction.user.id,
             );
           }
+          //await interaction.deferUpdate();
           data.upvotes++;
           data.upMembers.push(interaction.user.id);
           await this.pollService.update(data);
@@ -77,7 +78,7 @@ export class Interaction extends AEvent {
               .setLabel('⚠️ close')
               .setStyle(ButtonStyle.Danger),
           );
-          return await msg.edit({ embeds: [embed], components: [buttons] });
+          return await interaction.update({ embeds: [embed], components: [buttons] });
         } else if (interaction?.customId === 'down') {
           if (data.downMembers.includes(interaction.user.id)) {
             return await interaction.reply({
@@ -91,6 +92,7 @@ export class Interaction extends AEvent {
               (member) => member != interaction.user.id,
             );
           }
+          //await interaction.deferUpdate();
           data.downvotes++;
           data.downMembers.push(interaction.user.id);
           await this.pollService.update(data);
@@ -123,12 +125,16 @@ export class Interaction extends AEvent {
               .setLabel('⚠️ close')
               .setStyle(ButtonStyle.Danger),
           );
-          return await msg.edit({ embeds: [embed], components: [buttons] });
+          return await interaction.update({ embeds: [embed], components: [buttons] });
         } else if (interaction?.customId === 'close') {
-          data.active = false;
-          await this.pollService.update(data);
-          await msg.edit({components: []})
-          return await interaction.channel.send({content: 'The Poll has been closed!'})
+          if(interaction.user.username == data.ownerName) {
+            data.active = false;
+            await this.pollService.update(data);
+            await interaction.update({components: []})
+            return await interaction.channel.send({content: 'The Poll has been closed!'})
+          } else {
+            return await interaction.channel.send({content: `${interaction.user} you don\'t own this poll!`});
+          } 
         }
       } else return false;
     });
