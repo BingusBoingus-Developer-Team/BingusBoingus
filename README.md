@@ -1,18 +1,20 @@
-Status: In Development 🛠️
-
-Latest: 1.1.0
-
 🤖 Description:
 
-BingusBoingus is the bot you never knew you needed, mainly because it doesn't exist yet! This Discord bot repository is currently just a twinkle in the eyes of our imaginary developers. With BingusBoingus, expect the unexpected, and prepare for some hilariously quirky and utterly pointless commands that will make you wonder, "Why does this bot even exist?"
+BingusBoingus is the bot you never knew you needed, mainly because it not really useful and just very silly instead! With BingusBoingus, expect the unexpected, and prepare for some hilariously quirky and utterly pointless commands that will make you wonder, "Why does this bot even exist?"
 
-🪄 Features (not really):
+🪄 Features:
 
-Random Responses: BingusBoingus excels at delivering responses that are both baffling and comical. Ask it a question, and you might get a recipe for mashed potatoes in return.
+- Random Responses: BingusBoingus excels at delivering responses that are both baffling and comical.
 
-Virtual Tea Party: Join the bot in its daily virtual tea party where it discusses the weather with itself.
+- Coinflip: Ask Bingus to toss a coin for you. It might land on heads. It might land on tails. Or it might...
 
-404 Error: This bot's purpose is as elusive as a unicorn, so prepare to have your expectations shattered.
+- Saving Quotes: BingusBoingus is able to save quotes in a database.
+
+- 404 Error: This bot's purpose is as elusive as a unicorn, so prepare to have your expectations shattered.
+
+And more....
+
+For more information on commands and how to use them please check the [BingusBoingus Wiki](https://github.com/Blvckleg/BingusBoingus/wiki)
 
 🎉 Coming Soon (or not):
 
@@ -22,15 +24,11 @@ Virtual Tea Party: Join the bot in its daily virtual tea party where it discusse
 
 - Occasional Nonsense: The bot will occasionally send you random, nonsensical messages to keep you on your toes.
 
-- Also:
-
-- And coming soon:
-
-- maybe even:
+- Virtual Tea Party: Join the bot in its daily virtual tea party where it discusses the weather with itself.
 
 Stay tuned for more updates on BingusBoingus, the Discord bot that's sillier than a rubber chicken in a tuxedo!
 
-This repository follows a structured Git branching workflow:
+## This repository follows a structured Git branching workflow:
 
 - Branch Creation: Start a new branch for each feature or bug fix.
 - Commits: Make changes and commit with clear messages following the conventional commit messages.

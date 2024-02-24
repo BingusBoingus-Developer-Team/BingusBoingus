@@ -8,8 +8,10 @@ import { BugReport } from './commands/bug';
 import { CoinflipCommand } from './commands/coinflip';
 import { GoldCommand } from './commands/gold';
 import SomeoneOnceSaidCommand from './commands/someone-once-said';
-import { SomeoneOnceSaidModule } from '../someone-once-said/modules/someone-once-said.module';
+import { SomeoneOnceSaidModule } from '../someone-once-said/module/someone-once-said.module';
 import GetRandomQuote from './commands/get-a-quote';
+import { PollCommand } from './commands/poll';
+import { PollModule } from '../poll/module/poll.module';
 
 @Module({
   providers: [
@@ -23,8 +25,9 @@ import GetRandomQuote from './commands/get-a-quote';
     GoldCommand,
     SomeoneOnceSaidCommand,
     GetRandomQuote,
+    PollCommand
   ],
-  imports: [SomeoneOnceSaidModule],
+  imports: [SomeoneOnceSaidModule, PollModule],
   exports: [CommandService],
 })
 export class CommandModule {}

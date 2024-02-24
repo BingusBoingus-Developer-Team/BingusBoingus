@@ -20,7 +20,6 @@ services:
     volumes:
       - ./infra/mongo:/db/data:rw
       - ./infra/mongo/mongo.conf:/etc/mongo/mongo.conf:ro
-      - ./infra/mongo/init.js:/docker-entrypoint-initdb.d/init.js:ro
     env_file:
       - ./infra/mongo/.env
     command:
