@@ -2,17 +2,13 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: ['Docker Image CI']
+    workflows: [Docker Image CI]
     types: [completed]
-    # branches: [deploy-pipeline]
+    branches: [master]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # permissions:
-    #   packages: write
-    #   contents: read
-
     steps:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
