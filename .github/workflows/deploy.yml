@@ -19,7 +19,6 @@ jobs:
           passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script_stop: true
           script: |
-            whoami
             cd bingusboingus
             docker compose pull
             docker compose up -d
