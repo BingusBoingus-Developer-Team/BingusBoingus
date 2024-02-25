@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.3](https://github.com/Blvckleg/BingusBoingus/compare/v1.1.2...v1.1.3) (2024-02-25)
+
+
+### Bug Fixes
+
+* **mongo-config:** configurable auth database ([ee35cd4](https://github.com/Blvckleg/BingusBoingus/commit/ee35cd4e40056f4d5b11e235aed331762b0b2f9e))
+
+
+### Reverts
+
+* .github/workflows/docker.yml ([f1fceb7](https://github.com/Blvckleg/BingusBoingus/commit/f1fceb7256031856df38e4a2777281503272c80a))
+
 ## [1.1.2](https://github.com/Blvckleg/BingusBoingus/compare/v1.1.1...v1.1.2) (2024-02-24)
 
 
