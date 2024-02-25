@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches: ['deploy-pipeline']
+    # tags:
+    #   - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # permissions:
+    #   packages: write
+    #   contents: read
+
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            whoami
+            cd bingusboingus
+            docker pull
+
+# build repoUrl
+# change all uppercase characters to lowercase
+# strip git ref prefix from version
+# strip v prefix from tag name
+# zse Docker:latest tag convention
+###ssh sachen
+# https://github.com/appleboy/ssh-action
