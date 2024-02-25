@@ -27,7 +27,8 @@ jobs:
           script: |
             whoami
             cd bingusboingus
-            docker pull
+            docker compose pull
+            docker compose up -d
 
 # build repoUrl
 # change all uppercase characters to lowercase
