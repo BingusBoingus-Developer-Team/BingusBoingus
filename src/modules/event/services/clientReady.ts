@@ -7,8 +7,8 @@ export class ClientReady extends AEvent {
   event: keyof ClientEvents = Events.ClientReady;
   once: boolean = true;
 
-  async execute(c) {
-      console.log('Successfully connected to Discord');
-      console.log(`logged in as ${c.user?.tag}`);
+  async execute(args: ClientEvents[Events.ClientReady]) {
+    console.log('Successfully connected to Discord');
+    console.log(`logged in as ${args[0].user.username}`);
   }
 }
