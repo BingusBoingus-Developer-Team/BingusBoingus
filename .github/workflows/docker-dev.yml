@@ -3,8 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: ['dev']
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 env:
   IMAGE_NAME: bingusboingus
@@ -36,11 +34,6 @@ jobs:
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
-
-          if [[ $VERSION =~ ^[0-9]+.[0-9]+.[0-9]+$ ]]; then
-            docker tag $IMAGE_ID:$VERSION $IMAGE_ID:latest
-            docker push $IMAGE_ID:latest
-          fi
 
         # build repoUrl
         # change all uppercase characters to lowercase
