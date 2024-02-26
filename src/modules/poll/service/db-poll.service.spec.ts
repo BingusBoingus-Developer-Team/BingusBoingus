@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/mongoose';
 import { Model, MongooseError } from 'mongoose';
-import { PollService } from './poll.service';
+import { DbPollService } from './db-poll.service';
 import { PollDocument } from '../../../schemas/poll.schema';
 import { PollEntity } from '../../../schemas/poll-entity.model';
 import { UpdatePollDto } from '../dto/update-poll.dto';
@@ -13,8 +13,8 @@ const mockPollModel = () => ({
   findOne: jest.fn(),
 });
 
-describe('PollService', () => {
-  let service: PollService;
+describe('DbPollService', () => {
+  let service: DbPollService;
   let pollModel: Model<PollDocument>;
   let mockDate: Date = new Date(0);
   jest.useFakeTimers();
@@ -22,7 +22,7 @@ describe('PollService', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
-        PollService,
+        DbPollService,
         {
           provide: getModelToken('Poll'),
           useFactory: mockPollModel,
@@ -30,7 +30,7 @@ describe('PollService', () => {
       ],
     }).compile();
 
-    service = module.get<PollService>(PollService);
+    service = module.get<DbPollService>(DbPollService);
     pollModel = module.get<Model<PollDocument>>(getModelToken('Poll'));
   });
 
