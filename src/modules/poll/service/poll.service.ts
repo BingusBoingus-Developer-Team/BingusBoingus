@@ -87,7 +87,7 @@ export class PollService {
     if (data.upMembers.includes(interaction.user.id)) {
       return await interaction.reply({
         content: `${interaction.user} you already voted for this`,
-        // ephemeral: true,
+        ephemeral: true,
       });
     }
     if (data.downMembers.includes(interaction.user.id)) {
@@ -111,7 +111,7 @@ export class PollService {
     if (data.downMembers.includes(interaction.user.id)) {
       return await interaction.reply({
         content: `${interaction.user} you already voted for this`,
-        // ephemeral: true,
+        ephemeral: true,
       });
     }
     if (data.upMembers.includes(interaction.user.id)) {
