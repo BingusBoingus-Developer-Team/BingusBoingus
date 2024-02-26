@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { Events } from 'discord.js';
-import { AEvent } from '../event.abstract';
+import { ClientEvents, Events, Message } from 'discord.js';
+import { AEvent, EventKey } from '../event.abstract';
 import { IResponse, ResponseType } from '../interfaces/iresponse';
 @Injectable()
 export class MessageEvent extends AEvent {
-  event: Events = Events.MessageCreate; // ShardEvents.Message;
+  event: keyof ClientEvents = Events.MessageCreate; // ShardEvents.Message;
   once: boolean = false;
 
   private responseList: Array<IResponse> = [
@@ -60,13 +60,13 @@ export class MessageEvent extends AEvent {
     },
   ];
 
-  async execute(message: any /*Message<boolean>*/) {
-    return this.run(() => {
-      const { content, channel, author } = message;
-      if (author.bot) return;
+  async execute(args: ClientEvents[Events.MessageCreate]):Promise<void> {
+    const message = args[0];
+    const { content, channel, author } = message;
+    if (author.bot) return;
 
-      this.responseList.forEach((res) => {
-        var testRes = res.matcher.test(content);
+    this.responseList.forEach((res) => {
+      var testRes = res.matcher.test(content);
         if (testRes) {
           if (res?.responseType == ResponseType.Reply) {
             message.reply(res.response);
@@ -75,6 +75,5 @@ export class MessageEvent extends AEvent {
           }
         }
       });
-    });
   }
 }
