@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.1.3...v1.2.0) (2024-02-26)
+
+
+### Features
+
+* **PollService:** add ephemeral flag for replies ([1f9b919](https://github.com/Blvckleg/BingusBoingus/commit/1f9b919f6bb4908889aeb39273bf020a71ccfd9f))
+
+
+### Bug Fixes
+
+* login logging xd ([8abfb75](https://github.com/Blvckleg/BingusBoingus/commit/8abfb7588c83be6ba865e120a5eb1b491cba3e09))
+* **login:** ClientReady logging ([2da993b](https://github.com/Blvckleg/BingusBoingus/commit/2da993bd0f5c71dea454640415962c56a316cf45))
+* **mongo.config:** dbName ([4b48774](https://github.com/Blvckleg/BingusBoingus/commit/4b487741efba1ff499dd026e10d9b758a9d3f8cb))
+* saving quotes ([b767b09](https://github.com/Blvckleg/BingusBoingus/commit/b767b09074971f8cbe407e163c550b02f2517ed7))
+
 ## [1.1.3](https://github.com/Blvckleg/BingusBoingus/compare/v1.1.2...v1.1.3) (2024-02-25)
 
 
