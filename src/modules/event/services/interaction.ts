@@ -12,7 +12,7 @@ import {
 import { AEvent } from '../event.abstract';
 import { CommandService } from '../../command/command.service';
 import { Inject, Injectable } from '@nestjs/common';
-import { PollService } from 'src/modules/poll/service/poll.service';
+import { PollService } from '../../poll/service/poll.service';
 
 @Injectable()
 export class Interaction extends AEvent {
