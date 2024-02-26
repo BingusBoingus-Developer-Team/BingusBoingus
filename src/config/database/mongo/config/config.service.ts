@@ -11,11 +11,16 @@ import {
  */
 @Injectable()
 export class MongoConfigService implements MongooseOptionsFactory {
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService) {}
 
   createMongooseOptions(): MongooseModuleOptions {
     if (this.username && this.password) {
-      return { uri: `mongodb://${this.username}:${this.password}@${this.uri}` + (this.database ? `/?authSource=${this.database}` : "") }
+      return {
+        uri:
+          `mongodb://${this.username}:${this.password}@${this.uri}` +
+          (this.database ? `/?authSource=${this.database}` : ''),
+        dbName: this.database,
+      };
     } else {
       return { uri: this.uri };
     }

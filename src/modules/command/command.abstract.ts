@@ -10,9 +10,7 @@ export abstract class ACommand {
     | SlashCommandBuilder
     | Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>;
 
-  public abstract execute(
-    arg: Interaction<CacheType> | CommandInteraction<CacheType>,
-  ): Promise<boolean>;
+  public abstract execute(arg: CommandInteraction<CacheType>): Promise<boolean>;
 
   protected async run(command: () => any): Promise<boolean> {
     try {

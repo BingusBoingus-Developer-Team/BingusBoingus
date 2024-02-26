@@ -8,15 +8,17 @@ describe('Interaction', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [Interaction,
-      {
-        provide: CommandService,
-        useValue: {}
-      },
-      {
-        provide: PollService,
-        useValue: {}
-      }],
+      providers: [
+        Interaction,
+        {
+          provide: CommandService,
+          useValue: {},
+        },
+        {
+          provide: PollService,
+          useValue: {},
+        },
+      ],
     }).compile();
 
     service = module.get<Interaction>(Interaction);
