@@ -32,6 +32,7 @@ export default class SomeoneOnceSaidCommand extends ACommand {
       });
       return;
     }
+    await arg.deferReply();
     let phraseValue = (phrase.value as unknown as string).replaceAll(
       '\\n',
       '\n',
@@ -49,7 +50,7 @@ export default class SomeoneOnceSaidCommand extends ACommand {
         text: created?.secName ?? created.username,
       })
       .setTimestamp(created.createdAt);
-    arg.channel.send({ embeds: [quoteEmbed] });
+    await arg.editReply({ embeds: [quoteEmbed] });
     return true;
   }
 }
