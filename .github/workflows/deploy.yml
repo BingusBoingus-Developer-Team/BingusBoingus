@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   release:
-    types: edited # change later to published
+    types: created # change later to published
 
 env:
   IMAGE_NAME: bingusboingus
