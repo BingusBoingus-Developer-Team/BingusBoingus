@@ -1,4 +1,4 @@
-![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg) ![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)
+## build and test status: ![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg) ![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)
 
 🤖 Description:
 
