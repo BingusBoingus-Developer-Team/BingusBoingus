@@ -1,3 +1,5 @@
+## build and test status: ![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg) ![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)
+
 🤖 Description:
 
 BingusBoingus is the bot you never knew you needed, mainly because it not really useful and just very silly instead! With BingusBoingus, expect the unexpected, and prepare for some hilariously quirky and utterly pointless commands that will make you wonder, "Why does this bot even exist?"
