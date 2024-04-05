@@ -20,7 +20,7 @@ export class VersionCommand extends ACommand {
     const version = await this.versionService.getVersion();
     return this.run(async () => {
       if (version && version.length > 0) {
-        return await interaction.reply('The current version is: ${version}');
+        return await interaction.reply(`The current version is: ${version}`);
       }
       return await interaction.reply('Failed to get version');
     });
