@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.4.0...v1.5.0) (2024-04-05)
+
+
+### Features
+
+* **slashcommands:** version command ([491d417](https://github.com/Blvckleg/BingusBoingus/commit/491d417de579ee7285339f20419353fb5edc7009))
+
+
+### Bug Fixes
+
+* template string ([49a716a](https://github.com/Blvckleg/BingusBoingus/commit/49a716a840b3283f9f558b5e2e574b8b170e977c))
+
 ## [1.4.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.3.0...v1.4.0) (2024-04-05)
 
 
