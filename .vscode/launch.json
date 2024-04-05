@@ -22,12 +22,42 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "[bun] start",
+      "runtimeExecutable": "bun",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "runtimeArgs": [
+        "run",
+        "start:debug"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "start:dev",
       "runtimeExecutable": "npm",
       "console": "integratedTerminal",
       "envFile": "${workspaceFolder}/.env.dev",
       "runtimeArgs": [
         "run-script",
+        "start:debug"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "[bun] start:dev",
+      "runtimeExecutable": "bun",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env.dev",
+      "runtimeArgs": [
+        "run",
         "start:debug"
       ],
       "skipFiles": [
