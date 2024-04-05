@@ -1,7 +1,6 @@
 import {
   CacheType,
   CommandInteraction,
-  Interaction,
   SlashCommandBuilder,
 } from 'discord.js';
 
