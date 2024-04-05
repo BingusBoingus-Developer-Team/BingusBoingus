@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.3.0...v1.4.0) (2024-04-05)
+
+
+### Features
+
+* launch config for bun ([259d333](https://github.com/Blvckleg/BingusBoingus/commit/259d3339c4deebc38596ab22b2b1d945879ac122))
+
 ## [1.3.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.2.0...v1.3.0) (2024-02-26)
 
 
