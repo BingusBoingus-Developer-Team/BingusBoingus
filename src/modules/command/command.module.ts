@@ -12,6 +12,8 @@ import { SomeoneOnceSaidModule } from '../someone-once-said/module/someone-once-
 import GetRandomQuote from './commands/get-a-quote';
 import { PollCommand } from './commands/poll';
 import { PollModule } from '../poll/module/poll.module';
+import { VersionModule } from '../version/module/version.module';
+import { VersionCommand } from './commands/version';
 
 @Module({
   providers: [
@@ -25,9 +27,10 @@ import { PollModule } from '../poll/module/poll.module';
     GoldCommand,
     SomeoneOnceSaidCommand,
     GetRandomQuote,
-    PollCommand
+    PollCommand,
+    VersionCommand
   ],
-  imports: [SomeoneOnceSaidModule, PollModule],
+  imports: [SomeoneOnceSaidModule, PollModule, VersionModule],
   exports: [CommandService],
 })
 export class CommandModule {}
