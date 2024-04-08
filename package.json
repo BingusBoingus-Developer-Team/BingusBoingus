@@ -43,6 +43,7 @@
     "joi": "^17.10.2",
     "mongoose": "^8.0.1",
     "ngrok": "^5.0.0-beta.2",
+    "node-cron": "^3.0.3",
     "node-fetch": "^3.3.2",
     "rimraf": "^5.0.1",
     "source-map-support": "^0.5.21",

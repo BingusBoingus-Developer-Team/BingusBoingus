@@ -14,6 +14,10 @@ import { PollCommand } from './commands/poll';
 import { PollModule } from '../poll/module/poll.module';
 import { VersionModule } from '../version/module/version.module';
 import { VersionCommand } from './commands/version';
+import { BirthdayEntryModule } from '../birthday/module/birthday-entry.module';
+import AddBirthdayEntryCommand from './commands/add-birthday-entry';
+import ActivateBirthdayEntryShoutoutCommand from './commands/activate-birthday-shoutout';
+import DeactivateBirthdayEntryShoutoutCommand from './commands/deactivate-birthday-shoutout';
 
 @Module({
   providers: [
@@ -28,9 +32,12 @@ import { VersionCommand } from './commands/version';
     SomeoneOnceSaidCommand,
     GetRandomQuote,
     PollCommand,
-    VersionCommand
+    VersionCommand,
+    AddBirthdayEntryCommand,
+    DeactivateBirthdayEntryShoutoutCommand,
+    ActivateBirthdayEntryShoutoutCommand,
   ],
-  imports: [SomeoneOnceSaidModule, PollModule, VersionModule],
+  imports: [SomeoneOnceSaidModule, PollModule, VersionModule, BirthdayEntryModule],
   exports: [CommandService],
 })
 export class CommandModule {}
