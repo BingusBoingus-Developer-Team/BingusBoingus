@@ -10,6 +10,10 @@ import SomeoneOnceSaidCommand from './commands/someone-once-said';
 import GetRandomQuote from './commands/get-a-quote';
 import { PollCommand } from './commands/poll';
 import { VersionCommand } from './commands/version';
+import { BirthdayEntry } from '../../schemas/birthday-entry.schema';
+import AddBirthdayEntryCommand from './commands/add-birthday-entry';
+import DeactivateBirthdayEntryShoutoutCommand from './commands/deactivate-birthday-shoutout';
+import ActivateBirthdayEntryShoutoutCommand from './commands/activate-birthday-shoutout';
 
 @Injectable()
 export class CommandService {
@@ -26,7 +30,10 @@ export class CommandService {
     someoneOnceSaidModule: SomeoneOnceSaidCommand,
     getRandomQuoteModule: GetRandomQuote,
     pollModule: PollCommand,
-    versionModule: VersionCommand
+    versionModule: VersionCommand,
+    addBirthdayEntryModule: AddBirthdayEntryCommand,
+    deactivateBirthdayEntryShoutoutModule: DeactivateBirthdayEntryShoutoutCommand,
+    activateBirthdayEntryShoutoutModule: ActivateBirthdayEntryShoutoutCommand,
   ) {
     const commands: ACommand[] = [
       //pingpongModule,
@@ -39,7 +46,10 @@ export class CommandService {
       someoneOnceSaidModule,
       getRandomQuoteModule,
       pollModule,
-      versionModule
+      versionModule,
+      addBirthdayEntryModule,
+      deactivateBirthdayEntryShoutoutModule,
+      activateBirthdayEntryShoutoutModule,
     ];
     commands.forEach((command) => {
       if (command.data.name && command.execute) {
