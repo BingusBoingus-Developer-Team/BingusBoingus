@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.5.0...v1.6.0) (2024-04-08)
+
+
+### Features
+
+* **birthday-entry:** create or update birthday entries and set active/inactive ([5a9d247](https://github.com/Blvckleg/BingusBoingus/commit/5a9d247b98ecb37e69bde6eeef648e37d539d577))
+* **cron:** cron service for tasks ([fb7f5c0](https://github.com/Blvckleg/BingusBoingus/commit/fb7f5c0960b4610f64922e4d1facf36153026a71))
+
 ## [1.5.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.4.0...v1.5.0) (2024-04-05)
 
 
