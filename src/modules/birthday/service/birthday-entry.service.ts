@@ -50,16 +50,25 @@ export class BirthdayEntryService {
   }
 
   async getEntryForToday(): Promise<BirthdayEntryDocument[]> {
-    const today = new Date();
-    const day = today.getDate();
-    const month = today.getMonth() + 1;
-    return await this.birthdayEntry.find({
-      $expr: {
-        $and: [
-          { $eq: [{ $dayOfMonth: '$birthDate' }, day] },
-          { $eq: [{ $month: '$birthDate' }, month] },
-        ],
-      },
-    });
+    try {
+      let entries = await this.birthdayEntry.find<BirthdayEntryDocument>({ active: true });
+      if (!entries) {
+          return null
+      }
+
+      let today = new Date()
+
+      return entries
+          .filter((entry) => {
+              let date = new Date(entry.birthDate)
+              return (
+                date.getFullYear() !== today.getFullYear() &&
+                date.getMonth() === today.getMonth() &&
+                date.getDate() === today.getDate()
+              )
+          })
+    } catch (e) {
+      return null;
+    }
   }
 }
