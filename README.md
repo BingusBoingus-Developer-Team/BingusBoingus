@@ -41,6 +41,6 @@ Stay tuned for more updates on BingusBoingus, the Discord bot that's sillier tha
 
 This workflow ensures organized and collaborative development.
 
-for more information on contributing and conventional commits please visit the [Github Contributing Docs.](https://github.com/github/docs/blob/main/CONTRIBUTING.md)
+for more information on contributing and conventional commits please visit the [Github Contributing Docs.](https://github.com/Blvckleg/BingusBoingus/blob/master/CONTRIBUTING.md)
 
 Built with [NestJs](https://github.com/nestjs)
