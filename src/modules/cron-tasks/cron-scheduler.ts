@@ -4,6 +4,7 @@ import BirthdayShoutoutTask from './tasks/birthday-shoutout.task'
 import * as cron from 'node-cron'
 import { Inject } from '@nestjs/common'
 import { BirthdayEntryService } from '../birthday/service/birthday-entry.service'
+import WakeUpTask from './tasks/wake-up.task'
 
 
 interface TaskEntry {
@@ -29,6 +30,13 @@ class CronScheduler {
                 task: new BirthdayShoutoutTask(
                     this.client.channels.cache.find((channel) => channel.id === '447554141724737548') as TextChannel,birthdayService
                 ),
+            },
+            {
+            name: 'first-of-the-month', 
+            schedule: '0 12 1 * *',
+            task: new WakeUpTask(
+                this.client.channels.cache.find((channel) => channel.id === '447554141724737548') as TextChannel,
+            ),
             },
         ]
 
