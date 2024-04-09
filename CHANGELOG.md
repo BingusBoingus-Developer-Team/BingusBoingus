@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.6.0...v1.7.0) (2024-04-09)
+
+
+### Features
+
+* assets ([a05888d](https://github.com/Blvckleg/BingusBoingus/commit/a05888dc0ba2a40c00b029fec488ca5497c130eb))
+* wake up task ([b4e01e9](https://github.com/Blvckleg/BingusBoingus/commit/b4e01e94bad212a6b698d5fd66ca437e43ba8240))
+
 ## [1.6.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.5.0...v1.6.0) (2024-04-08)
 
 
