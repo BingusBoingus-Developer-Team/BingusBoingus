@@ -1,16 +1,18 @@
-## build and test status: ![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg) ![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)
-
 🤖 Description:
 
 BingusBoingus is the bot you never knew you needed, mainly because it not really useful and just very silly instead! With BingusBoingus, expect the unexpected, and prepare for some hilariously quirky and utterly pointless commands that will make you wonder, "Why does this bot even exist?"
 
 🪄 Features:
 
-- Random Responses: BingusBoingus excels at delivering responses that are both baffling and comical.
+- Random Responses: BingusBoingus excels at delivering responses to messages that are both baffling and comical.
 
 - Coinflip: Ask Bingus to toss a coin for you. It might land on heads. It might land on tails. Or it might...
 
 - Saving Quotes: BingusBoingus is able to save quotes in a database.
+
+- Creating Polls: Bingus is able to create a poll about any topic for you.
+
+- Birthday Shoutouts: every user can add their birthday. Bingus will remember it and congratulate you on your special day. Can effortlessly be deactivated/activated
 
 - 404 Error: This bot's purpose is as elusive as a unicorn, so prepare to have your expectations shattered.
 
@@ -44,3 +46,9 @@ This workflow ensures organized and collaborative development.
 for more information on contributing and conventional commits please visit the [BingusBoingus Contributing Docs.](https://github.com/Blvckleg/BingusBoingus/blob/master/CONTRIBUTING.md)
 
 Built with [NestJs](https://github.com/nestjs)
+
+|     Tests     |     Builds    |    Version    |
+|:-------------:|:-------------:|:-------------:|
+| [![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml) | [![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml) | ![version-latest](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FBingusBoingus-Developer-Team%2FBingusBoingus%2Fraw%2Fmaster%2Fpackage.json&query=%24.version&label=latest)
+
+
