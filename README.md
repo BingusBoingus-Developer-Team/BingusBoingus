@@ -47,8 +47,8 @@ for more information on contributing and conventional commits please visit the [
 
 Built with [NestJs](https://github.com/nestjs)
 
-|               |               |
-|:-------------:|:-------------:|
-| [![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml) | [![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml) |
+|     Tests     |     Builds    |    Version    |
+|:-------------:|:-------------:|:-------------:|
+| [![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml) | [![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml) | ![version-latest](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FBingusBoingus-Developer-Team%2FBingusBoingus%2Fraw%2Fmaster%2Fpackage.json&query=%24.version&label=latest)
 
 
