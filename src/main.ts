@@ -31,21 +31,15 @@ async function bootstrapSwagger(
   const config = new DocumentBuilder()
     .setTitle('BingusBoingus API')
     .setDescription('BingusBoingus REST API Documentation')
-    .setVersion('1.0')
-    .addBearerAuth()
-    .addServer(`localhost:${appConfig.appPort}`, 'Default Ingress')
+    .setVersion('1.0').setBasePath('api/v1')
     .build();
 
   const document = SwaggerModule.createDocument(app, config, {
-    ignoreGlobalPrefix: true,
-    deepScanRoutes: true,
+    ignoreGlobalPrefix: false,
+
   });
 
   SwaggerModule.setup('api/v1/doc', app, document, {
-    swaggerOptions: {
-      persistAuthorization: true,
-      urls: [`localhost:${appConfig.appPort}/api/v1/doc/swagger.json`]
-    },
     customSiteTitle: 'API Docs',
     explorer: true,
   } as unknown as any);
