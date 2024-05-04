@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 
 
 export default [
-  {languageOptions: { globals: globals.browser }},
+  {languageOptions: { globals: globals.browser }, rules: { "no-unused-vars": "error" },},
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
 ];
