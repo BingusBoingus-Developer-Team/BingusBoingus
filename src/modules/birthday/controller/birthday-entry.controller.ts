@@ -50,7 +50,6 @@ import { CreateOrUpdateBirthdayEntryDto } from '../dto/create-or-update-birthday
     }
   
     @Post('/')
-    @UseInterceptors(ClassSerializerInterceptor)
     @ApiOperation({
       summary: 'create birthday entry',
       description:
