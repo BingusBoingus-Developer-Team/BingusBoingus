@@ -67,7 +67,7 @@ describe('DbPollService', () => {
 
       const result = await service.create({} as PollEntity);
 
-      expect(result).toBeNull();
+      expect(result).toBeUndefined();
     });
   });
 

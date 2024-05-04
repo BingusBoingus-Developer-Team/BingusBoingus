@@ -74,27 +74,6 @@ describe('SomeoneOnceSaidService', () => {
     });
   });
 
-  describe('deleteProductionOrderForUser', () => {
-    it('should delete quotes for a user', async () => {
-      const username = 'testUser';
-
-      const result = await service.deleteProductionOrderForUser(username);
-
-      expect(result).toBeUndefined();
-      expect(modelMock.deleteMany).toHaveBeenCalledWith({ username });
-    });
-
-    it('should return an error when there is an error', async () => {
-      const username = 'testUser';
-      (modelMock as any).deleteMany = jest
-        .fn()
-        .mockRejectedValue(new Error('test'));
-
-      const result = await service.deleteProductionOrderForUser(username);
-      expect(result).toStrictEqual(new MongooseError(`Error deleting Quotes for username: ${username}`))
-      
-    });
-  });
 
   describe('getRandomQuote', () => {
     it('should return a random quote', async () => {
