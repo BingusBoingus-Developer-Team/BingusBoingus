@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.7.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.6.0...v1.7.0) (2024-04-09)
+
+
+### Features
+
+* assets ([a05888d](https://github.com/Blvckleg/BingusBoingus/commit/a05888dc0ba2a40c00b029fec488ca5497c130eb))
+* wake up task ([b4e01e9](https://github.com/Blvckleg/BingusBoingus/commit/b4e01e94bad212a6b698d5fd66ca437e43ba8240))
+
+## [1.6.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.5.0...v1.6.0) (2024-04-08)
+
+
+### Features
+
+* **birthday-entry:** create or update birthday entries and set active/inactive ([5a9d247](https://github.com/Blvckleg/BingusBoingus/commit/5a9d247b98ecb37e69bde6eeef648e37d539d577))
+* **cron:** cron service for tasks ([fb7f5c0](https://github.com/Blvckleg/BingusBoingus/commit/fb7f5c0960b4610f64922e4d1facf36153026a71))
+
+## [1.5.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.4.0...v1.5.0) (2024-04-05)
+
+
+### Features
+
+* **slashcommands:** version command ([491d417](https://github.com/Blvckleg/BingusBoingus/commit/491d417de579ee7285339f20419353fb5edc7009))
+
+
+### Bug Fixes
+
+* template string ([49a716a](https://github.com/Blvckleg/BingusBoingus/commit/49a716a840b3283f9f558b5e2e574b8b170e977c))
+
+## [1.4.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.3.0...v1.4.0) (2024-04-05)
+
+
+### Features
+
+* launch config for bun ([259d333](https://github.com/Blvckleg/BingusBoingus/commit/259d3339c4deebc38596ab22b2b1d945879ac122))
+
 ## [1.3.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.2.0...v1.3.0) (2024-02-26)
 
 
