@@ -1,14 +1,14 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { BirthdayEntryDocument } from '../../../schemas/birthday-entry.schema';
-import { BirthdayEntryEntity } from '../../../schemas/birthday-entry.model';
+import { CreateOrUpdateBirthdayEntryDto } from '../dto/create-or-update-birthday-entry.dto';
 
 export class BirthdayEntryService {
   constructor(
     @InjectModel('BirthdayEntry')
     private readonly birthdayEntry: Model<BirthdayEntryDocument>,
   ) {}
-  async createOrUpdateBirthdayEntry(birthdayEntryDto: BirthdayEntryEntity,) {
+  async createOrUpdateBirthdayEntry(birthdayEntryDto: CreateOrUpdateBirthdayEntryDto,) {
     const birthdayEntry = await this.birthdayEntry.findOne({ username: birthdayEntryDto.username });
     if (birthdayEntry) {
       return await this.updateBirthdayEntry(birthdayEntryDto);
@@ -18,7 +18,7 @@ export class BirthdayEntryService {
   }
 
   async create(
-    birthdayEntryDto: BirthdayEntryEntity,
+    birthdayEntryDto: CreateOrUpdateBirthdayEntryDto,
   ): Promise<BirthdayEntryDocument> {
     try {
       return await this.birthdayEntry.create({
@@ -33,7 +33,7 @@ export class BirthdayEntryService {
     }
   }
 
-  async updateBirthdayEntry(birthdayEntryDto: BirthdayEntryEntity): Promise<BirthdayEntryDocument> {
+  async updateBirthdayEntry(birthdayEntryDto: CreateOrUpdateBirthdayEntryDto): Promise<BirthdayEntryDocument> {
     try {
       return await this.birthdayEntry.findOneAndUpdate(
         { username: birthdayEntryDto.username },

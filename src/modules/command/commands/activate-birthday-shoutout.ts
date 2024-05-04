@@ -6,7 +6,7 @@ import {
   import { ACommand } from '../command.abstract';
   import { Inject } from '@nestjs/common';
   import { BirthdayEntryService } from '../../birthday/service/birthday-entry.service';
-  import { BirthdayEntry } from '../../../schemas/birthday-entry.schema';
+import { CreateOrUpdateBirthdayEntryDto } from '../../birthday/dto/create-or-update-birthday-entry.dto';
   
   export default class ActivateBirthdayEntryShoutoutCommand extends ACommand {
     constructor(
@@ -23,11 +23,11 @@ import {
   
     async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
       await arg.deferReply();
-      const instance = new BirthdayEntry({
+      const instance: CreateOrUpdateBirthdayEntryDto ={
         username: arg.user.username,
         secName: arg.user.displayName,
         active: true
-      });
+      };
       const inactive =
         await this.birthdayEntryService.updateBirthdayEntry(instance);
         if (!inactive) {

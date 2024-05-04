@@ -23,16 +23,7 @@ export class SomeoneOnceSaidService {
       return null;
     }
   }
-
-  async deleteProductionOrderForUser(username: string) {
-    try {
-      await this.someoneOnceSaid.deleteMany({ username: username });
-    } catch (e) {
-      return new Error('Error deleting Quotes for username: ' + username);
-    }
-    return;
-  }
-
+  
   async getRandomQuote(): Promise<SomeoneOnceSaidDocument | null> {
     try {
       const count = await this.someoneOnceSaid.countDocuments();

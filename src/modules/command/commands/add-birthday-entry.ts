@@ -8,6 +8,7 @@ import { ACommand } from '../command.abstract';
 import { Inject } from '@nestjs/common';
 import { BirthdayEntryService } from '../../birthday/service/birthday-entry.service';
 import { BirthdayEntry } from '../../../schemas/birthday-entry.schema';
+import { CreateOrUpdateBirthdayEntryDto } from '../../birthday/dto/create-or-update-birthday-entry.dto';
 
 export default class AddBirthdayEntryCommand extends ACommand {
   constructor(
@@ -47,12 +48,12 @@ export default class AddBirthdayEntryCommand extends ACommand {
     let monthValue = month.value as unknown as number;
     let yearValue = year.value as unknown as number;
     let dateValue = new Date(yearValue, monthValue - 1, dayValue, 0, 0, 0, 0);
-    const instance = new BirthdayEntry({
+    const instance: CreateOrUpdateBirthdayEntryDto = {
       birthDate: dateValue,
       username: arg.user.username,
       secName: arg.user.displayName,
       active: true,
-    });
+    };
     const created =
       await this.birthdayEntryService.createOrUpdateBirthdayEntry(instance);
     const quoteEmbed = new EmbedBuilder()
