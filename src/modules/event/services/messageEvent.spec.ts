@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('MessageEvent', () => {
-  var service: MessageEvent;
+  let service: MessageEvent;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({

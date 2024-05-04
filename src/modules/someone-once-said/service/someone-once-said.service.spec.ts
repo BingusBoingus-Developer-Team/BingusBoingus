@@ -7,7 +7,7 @@ import { getModelToken } from '@nestjs/mongoose';
 describe('SomeoneOnceSaidService', () => {
   let service: SomeoneOnceSaidService;
   let modelMock: Model<SomeoneOnceSaidDocument>;
-  let mockDate: Date = new Date(0);
+  const mockDate: Date = new Date(0);
   jest.useFakeTimers();
   jest.setSystemTime(mockDate);
   const mockQuoteDto: SomeoneOnceSaidEntity = {

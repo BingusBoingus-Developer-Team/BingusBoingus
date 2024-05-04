@@ -12,7 +12,6 @@ import {
     catch(error: Error, host: ArgumentsHost) {
       const ctx = host.switchToHttp();
       const response = ctx.getResponse();
-      const request = ctx.getRequest<Request>();
       const statusCode: number =
         error instanceof HttpException
           ? error.getStatus()

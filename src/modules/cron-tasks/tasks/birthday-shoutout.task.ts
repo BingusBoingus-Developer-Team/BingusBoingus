@@ -10,16 +10,16 @@ export default class BirthdayShoutoutTask implements ITask {
     }
 
     async execute(): Promise<void> {
-        let birthDayEntries = await this.birthdayService.getEntryForToday()
+        const birthDayEntries = await this.birthdayService.getEntryForToday()
 
         if (!birthDayEntries || birthDayEntries.length < 1) {
             return
         }
 
         birthDayEntries.forEach((entry) => {
-            let creator = this.channel.members.find((member) => member.user.username === entry.username || member.user.displayName === entry.secName)
+            const creator = this.channel.members.find((member) => member.user.username === entry.username || member.user.displayName === entry.secName)
 
-            let embed = new EmbedBuilder()
+            const embed = new EmbedBuilder()
                 .setTitle(`🚨 Birthday Alert!! 🚨`)
                 .setColor('Random')
                 .setDescription(`${entry.username ?? entry.secName} is turning **${new Date().getFullYear() - entry.birthDate.getFullYear()}** years old today! 🎉🎂🎈`)

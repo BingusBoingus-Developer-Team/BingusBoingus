@@ -51,16 +51,16 @@ export class BirthdayEntryService {
 
   async getEntryForToday(): Promise<BirthdayEntryDocument[]> {
     try {
-      let entries = await this.birthdayEntry.find<BirthdayEntryDocument>({ active: true });
+      const entries = await this.birthdayEntry.find<BirthdayEntryDocument>({ active: true });
       if (!entries) {
           return null
       }
 
-      let today = new Date()
+      const today = new Date()
 
       return entries
           .filter((entry) => {
-              let date = new Date(entry.birthDate)
+              const date = new Date(entry.birthDate)
               return (
                 date.getFullYear() !== today.getFullYear() &&
                 date.getMonth() === today.getMonth() &&

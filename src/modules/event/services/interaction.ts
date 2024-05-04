@@ -30,7 +30,7 @@ export class Interaction extends AEvent {
     const interaction = args[0];
     if (interaction.isCommand()) {
       const { commandName } = interaction;
-      var command = this.commandService.getCommand(commandName);
+      const command = this.commandService.getCommand(commandName);
       command?.execute(interaction);
     } else if (interaction.isButton()) {
       if (interaction?.customId === 'up') {

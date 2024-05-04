@@ -52,7 +52,7 @@ export class CommandService {
       activateBirthdayEntryShoutoutModule,
     ];
     commands.forEach((command) => {
-      if (command.data.name && command.execute) {
+      if (command.data.name && !!command.execute) {
         console.log('command-name: ' + command.data.name);
         this.commands.set(command.data.name, command);
       } else {
@@ -62,9 +62,9 @@ export class CommandService {
     });
   }
 
-  public getCommand(commandName: string): ACommand {
+  public getCommand(commandName: string): ACommand | undefined {
     if (this.commands.has(commandName)) return this.commands.get(commandName);
-    return null;
+    return;
   }
 
   getAllCommands() {
