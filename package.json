@@ -14,7 +14,8 @@
     "build:test": "docker build --pull --rm -f \"dockerfiles\\Dockerfile.test\" -t ghcr.io/blvckleg/bingusboingus:test \".\"",
     "test:image": "docker run bingusboingus:test npm run test",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
