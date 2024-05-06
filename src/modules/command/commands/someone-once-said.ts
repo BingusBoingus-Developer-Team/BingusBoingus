@@ -24,7 +24,7 @@ export default class SomeoneOnceSaidCommand extends ACommand {
     );
 
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
-    let phrase = arg.options.get('phrase');
+    const phrase = arg.options.get('phrase');
     if (!phrase) {
       await arg.reply({
         content: 'ok but what did he say 4head ?XP',
@@ -33,7 +33,7 @@ export default class SomeoneOnceSaidCommand extends ACommand {
       return;
     }
     await arg.deferReply();
-    let phraseValue = (phrase.value as unknown as string).replaceAll(
+    const phraseValue = (phrase.value as unknown as string).replaceAll(
       '\\n',
       '\n',
     );

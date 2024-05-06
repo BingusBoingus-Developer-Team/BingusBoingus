@@ -66,7 +66,7 @@ export class MessageEvent extends AEvent {
     if (author.bot) return;
 
     this.responseList.forEach((res) => {
-      var testRes = res.matcher.test(content);
+      const testRes = res.matcher.test(content);
         if (testRes) {
           if (res?.responseType == ResponseType.Reply) {
             message.reply(res.response);

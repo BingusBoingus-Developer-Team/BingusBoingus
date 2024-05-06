@@ -16,7 +16,7 @@ const mockPollModel = () => ({
 describe('DbPollService', () => {
   let service: DbPollService;
   let pollModel: Model<PollDocument>;
-  let mockDate: Date = new Date(0);
+  const mockDate: Date = new Date(0);
   jest.useFakeTimers();
   jest.setSystemTime(mockDate);
   beforeEach(async () => {
@@ -47,7 +47,7 @@ describe('DbPollService', () => {
         downvotes: 0,
         upMembers: [],
         downMembers: [],
-      } as PollEntity;
+      } as unknown as PollEntity;
 
       const mockCreatedPoll: PollDocument = {
         ...mockPoll,
@@ -67,7 +67,7 @@ describe('DbPollService', () => {
 
       const result = await service.create({} as PollEntity);
 
-      expect(result).toBeNull();
+      expect(result).toBeUndefined();
     });
   });
 
@@ -80,7 +80,7 @@ describe('DbPollService', () => {
           downvotes: 0,
           upMembers: [],
           downMembers: [],
-        } as PollEntity;
+        } as unknown as PollEntity;
   
         const mockCreatedPoll: PollDocument = {
           ...mockPoll,

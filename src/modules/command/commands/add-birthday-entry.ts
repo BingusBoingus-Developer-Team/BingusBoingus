@@ -7,7 +7,7 @@ import {
 import { ACommand } from '../command.abstract';
 import { Inject } from '@nestjs/common';
 import { BirthdayEntryService } from '../../birthday/service/birthday-entry.service';
-import { BirthdayEntry } from '../../../schemas/birthday-entry.schema';
+import { CreateOrUpdateBirthdayEntryDto } from '../../birthday/dto/create-or-update-birthday-entry.dto';
 
 export default class AddBirthdayEntryCommand extends ACommand {
   constructor(
@@ -32,27 +32,27 @@ export default class AddBirthdayEntryCommand extends ACommand {
     );
 
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
-    let day = arg.options.get('day');
-    let month = arg.options.get('month');
-    let year = arg.options.get('year');
+    const day = arg.options.get('day');
+    const month = arg.options.get('month');
+    const year = arg.options.get('year');
     if (!day || !month || !year) {
       await arg.reply({
         content: 'yo listen you need to provide a day, month and year! 🤓',
         ephemeral: true,
       });
-      return;
+      return false;
     }
     await arg.deferReply();
-    let dayValue = day.value as unknown as number;
-    let monthValue = month.value as unknown as number;
-    let yearValue = year.value as unknown as number;
-    let dateValue = new Date(yearValue, monthValue - 1, dayValue, 0, 0, 0, 0);
-    const instance = new BirthdayEntry({
+    const dayValue = day.value as unknown as number;
+    const monthValue = month.value as unknown as number;
+    const yearValue = year.value as unknown as number;
+    const dateValue = new Date(yearValue, monthValue - 1, dayValue, 0, 0, 0, 0);
+    const instance: CreateOrUpdateBirthdayEntryDto = {
       birthDate: dateValue,
       username: arg.user.username,
       secName: arg.user.displayName,
       active: true,
-    });
+    };
     const created =
       await this.birthdayEntryService.createOrUpdateBirthdayEntry(instance);
     const quoteEmbed = new EmbedBuilder()

@@ -10,7 +10,7 @@ export default class WakeUpTask implements ITask {
 
     async execute(): Promise<void> {
 
-            let embed = new EmbedBuilder()
+            const embed = new EmbedBuilder()
                 .setTitle(`🚨 WAKE UP 🚨`)
                 .setColor('Random')
                 .setDescription(`🎉 it's the first of the month 🎉`)
