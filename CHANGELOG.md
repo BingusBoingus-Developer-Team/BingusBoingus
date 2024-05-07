@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.8.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.7.0...v1.8.0) (2024-05-07)
+
+
+### Features
+
+* **api:** controllers, endpoints and dto definition ([5e61dbb](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/5e61dbb585275299e27484ebbe3b89f0b1d218ca))
+* **common:** app api, res model, decorators and errorfilter ([9bf5e49](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/9bf5e49948a1a2cd8cc116b68f1f7cce6191c191))
+* **eslint:** config ([0fc7374](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/0fc7374fe8e10c371523df3207aa59e7cf49c106))
+* lint script ([f6fc03f](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/f6fc03fa7415001e5d9769e4880a8d87dffe039e))
+* **swagger:** setup swagger api docs ([08875fb](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/08875fb2354a827aad1c0add9cdb2adbf213816f))
+
+
+### Bug Fixes
+
+* **birthdaycontroller:** class serializer without options throws ([07d72d3](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/07d72d3463d92161b15e74d540a6a923c855f8a5))
+* swagger setup ([2077010](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/207701018b27966fd23209f7f44f04f83e344442))
+
 ## [1.7.0](https://github.com/Blvckleg/BingusBoingus/compare/v1.6.0...v1.7.0) (2024-04-09)
 
 
