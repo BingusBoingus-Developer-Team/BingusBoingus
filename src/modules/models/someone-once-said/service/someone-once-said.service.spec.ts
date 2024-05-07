@@ -78,9 +78,9 @@ describe('SomeoneOnceSaidService', () => {
   describe('getRandomQuote', () => {
     it('should return a random quote', async () => {
       (modelMock as any).findOne = jest.fn((p) => ({
-        skip: () => ({
-          limit: () => mockQuoteDocument,
-        }),
+        skip: jest.fn(() => ({
+          limit: jest.fn(() => mockQuoteDocument),
+        })),
       }));
       const countSpy = jest.spyOn(modelMock, 'countDocuments');
       const findOneSpy = jest.spyOn(modelMock, 'findOne');
