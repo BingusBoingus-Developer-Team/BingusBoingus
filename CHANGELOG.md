@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.2](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.1...v1.8.2) (2024-05-07)
+
+
+### Bug Fixes
+
+* **deps:** bun lock file ([ead02c5](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/ead02c59f281a7cf31212a9fc56561113a92ee68))
+
 ## [1.8.1](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.0...v1.8.1) (2024-05-07)
 
 
