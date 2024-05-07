@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.0...v1.8.1) (2024-05-07)
+
+
+### Bug Fixes
+
+* deps issues, types, tests ([#100](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/issues/100)) ([245bb9e](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/245bb9edc4d7cad3c5cc6c32df77e4ac3979b1c6))
+
 ## [1.8.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.7.0...v1.8.0) (2024-05-07)
 
 
