@@ -1,8 +1,8 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { PollDocument } from '../../../schemas/poll.schema';
-import { PollEntity } from '../../../schemas/poll-entity.model';
 import { UpdatePollDto } from '../dto/update-poll.dto';
+import { PollEntity } from '../../../../schemas/poll-entity.model';
+import { PollDocument } from '../../../../schemas/poll.schema';
 
 export class DbPollService {
   constructor(
@@ -10,7 +10,7 @@ export class DbPollService {
     private readonly pollModel: Model<PollDocument>,
   ) {}
 
-  async create(pollDto: PollEntity): Promise<PollDocument> {
+  async create(pollDto: PollEntity): Promise<PollDocument | undefined> {
     try {
       return await this.pollModel.create({
         msg: pollDto.msg,
@@ -24,11 +24,11 @@ export class DbPollService {
       });
     } catch (e) {
       console.error(e);
-      return null;
+      return;
     }
   }
 
-  async update(updateDto: UpdatePollDto): Promise<PollDocument> {
+  async update(updateDto: UpdatePollDto): Promise<PollDocument | null | undefined> {
     try {
       return await this.pollModel.findOneAndUpdate(
         { msg: updateDto.msg },
@@ -42,11 +42,11 @@ export class DbPollService {
         { new: true },
       );
     } catch (e) {
-      return null;
+      return;
     }
   }
 
-  async get(messageId: string): Promise<PollDocument> {
+  async get(messageId: string): Promise<PollDocument | undefined> {
     try {
       const test = await this.pollModel.findOne({
         msg: messageId,
@@ -54,7 +54,7 @@ export class DbPollService {
       });
       return test;
     } catch (e) {
-      return null;
+      return;
     }
   }
 }

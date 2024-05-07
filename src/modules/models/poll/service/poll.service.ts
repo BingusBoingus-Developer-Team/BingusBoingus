@@ -11,7 +11,7 @@ import {
 } from 'discord.js';
 import { DbPollService } from './db-poll.service';
 import { Inject } from '@nestjs/common';
-import { PollDocument } from '../../../schemas/poll.schema';
+import { PollDocument } from '../../../../schemas/poll.schema';
 
 export class PollService {
   constructor(

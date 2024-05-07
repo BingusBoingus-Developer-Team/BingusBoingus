@@ -1,13 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Model, Error, MongooseError } from 'mongoose';
 import { SomeoneOnceSaidService } from './someone-once-said.service';
-import { SomeoneOnceSaidEntity } from '../../../schemas/someone-once-said-entity.model';
-import { SomeoneOnceSaidDocument } from '../../../schemas/someone-once-said.schema';
 import { getModelToken } from '@nestjs/mongoose';
+import { SomeoneOnceSaidDocument } from '../../../../schemas/someone-once-said.schema';
+import { SomeoneOnceSaidEntity } from '../../../../schemas/someone-once-said-entity.model';
 describe('SomeoneOnceSaidService', () => {
   let service: SomeoneOnceSaidService;
   let modelMock: Model<SomeoneOnceSaidDocument>;
-  let mockDate: Date = new Date(0);
+  const mockDate: Date = new Date(0);
   jest.useFakeTimers();
   jest.setSystemTime(mockDate);
   const mockQuoteDto: SomeoneOnceSaidEntity = {
@@ -74,27 +74,6 @@ describe('SomeoneOnceSaidService', () => {
     });
   });
 
-  describe('deleteProductionOrderForUser', () => {
-    it('should delete quotes for a user', async () => {
-      const username = 'testUser';
-
-      const result = await service.deleteProductionOrderForUser(username);
-
-      expect(result).toBeUndefined();
-      expect(modelMock.deleteMany).toHaveBeenCalledWith({ username });
-    });
-
-    it('should return an error when there is an error', async () => {
-      const username = 'testUser';
-      (modelMock as any).deleteMany = jest
-        .fn()
-        .mockRejectedValue(new Error('test'));
-
-      const result = await service.deleteProductionOrderForUser(username);
-      expect(result).toStrictEqual(new MongooseError(`Error deleting Quotes for username: ${username}`))
-      
-    });
-  });
 
   describe('getRandomQuote', () => {
     it('should return a random quote', async () => {

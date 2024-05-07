@@ -1,18 +1,11 @@
 import {
-  ActionRowBuilder,
-  ButtonBuilder,
-  ButtonInteraction,
-  ButtonStyle,
-  CacheType,
   ClientEvents,
-  EmbedBuilder,
   Events,
-  Message,
 } from 'discord.js';
 import { AEvent } from '../event.abstract';
 import { CommandService } from '../../command/command.service';
-import { Inject, Injectable } from '@nestjs/common';
-import { PollService } from '../../poll/service/poll.service';
+import { Injectable } from '@nestjs/common';
+import { PollService } from '../../models/poll/service/poll.service';
 
 @Injectable()
 export class Interaction extends AEvent {
@@ -30,7 +23,7 @@ export class Interaction extends AEvent {
     const interaction = args[0];
     if (interaction.isCommand()) {
       const { commandName } = interaction;
-      var command = this.commandService.getCommand(commandName);
+      const command = this.commandService.getCommand(commandName);
       command?.execute(interaction);
     } else if (interaction.isButton()) {
       if (interaction?.customId === 'up') {

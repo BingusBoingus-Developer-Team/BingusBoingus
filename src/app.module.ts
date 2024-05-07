@@ -6,6 +6,8 @@ import { EventModule } from './modules/event/event.module';
 import { DeployModule } from './deployment/deploy.module';
 import { MongoDatabaseProviderModule } from './config/database/mongo/provider/mongo-provider.module';
 import { TaskModule } from './modules/cron-tasks/task.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -17,5 +19,7 @@ import { TaskModule } from './modules/cron-tasks/task.module';
     MongoDatabaseProviderModule,
     TaskModule
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
