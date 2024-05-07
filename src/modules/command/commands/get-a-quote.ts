@@ -5,8 +5,8 @@ import {
   SlashCommandBuilder,
 } from 'discord.js';
 import { ACommand } from '../command.abstract';
-import { SomeoneOnceSaidService } from '../../someone-once-said/service/someone-once-said.service';
 import { Inject } from '@nestjs/common';
+import { SomeoneOnceSaidService } from '../../models/someone-once-said/service/someone-once-said.service';
 
 export default class GetRandomQuote extends ACommand {
   constructor(

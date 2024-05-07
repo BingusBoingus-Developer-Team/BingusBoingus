@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Client, GatewayIntentBits } from 'discord.js';
 import { AppConfigService } from '../../config/config.service';
 import { CronScheduler } from '../cron-tasks/cron-scheduler';
-import { BirthdayEntryService } from '../birthday/service/birthday-entry.service';
+import { BirthdayEntryService } from '../models/birthday/service/birthday-entry.service';
 
 @Injectable()
 export class DiscordService {

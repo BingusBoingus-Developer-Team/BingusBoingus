@@ -3,8 +3,8 @@ import { ITask } from './tasks/interfaces/task.interface'
 import BirthdayShoutoutTask from './tasks/birthday-shoutout.task'
 import * as cron from 'node-cron'
 import { Inject } from '@nestjs/common'
-import { BirthdayEntryService } from '../birthday/service/birthday-entry.service'
 import WakeUpTask from './tasks/wake-up.task'
+import { BirthdayEntryService } from '../models/birthday/service/birthday-entry.service'
 
 
 interface TaskEntry {

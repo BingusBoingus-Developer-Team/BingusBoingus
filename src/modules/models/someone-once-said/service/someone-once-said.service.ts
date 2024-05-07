@@ -1,7 +1,7 @@
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, Error } from 'mongoose';
-import { SomeoneOnceSaidEntity } from '../../../schemas/someone-once-said-entity.model';
-import { SomeoneOnceSaidDocument } from '../../../schemas/someone-once-said.schema';
+import { Model } from 'mongoose';
+import { SomeoneOnceSaidDocument } from '../../../../schemas/someone-once-said.schema';
+import { SomeoneOnceSaidEntity } from '../../../../schemas/someone-once-said-entity.model';
 
 export class SomeoneOnceSaidService {
   constructor(

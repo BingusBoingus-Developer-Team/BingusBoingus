@@ -14,8 +14,8 @@ import {
     ApiResponse,
     ApiTags,
   } from '@nestjs/swagger';
-import { ReS } from '../../../common/res.model';
 import { VersionService } from '../service/version.service';
+import { ReS } from '../../../../common/res.model';
   
   @Controller('version')
   @ApiTags('version')

@@ -9,7 +9,7 @@ import {
   SlashCommandBuilder,
 } from 'discord.js';
 import { ACommand } from '../command.abstract';
-import { PollService } from '../../poll/service/poll.service';
+import { PollService } from '../../models/poll/service/poll.service';
 
 @Injectable()
 export class PollCommand extends ACommand {

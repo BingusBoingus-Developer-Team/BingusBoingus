@@ -2,9 +2,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/mongoose';
 import { Model, MongooseError } from 'mongoose';
 import { DbPollService } from './db-poll.service';
-import { PollDocument } from '../../../schemas/poll.schema';
-import { PollEntity } from '../../../schemas/poll-entity.model';
 import { UpdatePollDto } from '../dto/update-poll.dto';
+import { PollDocument } from '../../../../schemas/poll.schema';
+import { PollEntity } from '../../../../schemas/poll-entity.model';
 
 // Mocking the pollModel
 const mockPollModel = () => ({
