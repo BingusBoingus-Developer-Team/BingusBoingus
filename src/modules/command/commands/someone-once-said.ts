@@ -5,9 +5,9 @@ import {
   SlashCommandBuilder,
 } from 'discord.js';
 import { ACommand } from '../command.abstract';
-import { SomeoneOnceSaidService } from '../../someone-once-said/service/someone-once-said.service';
 import { Inject } from '@nestjs/common';
 import { SomeoneOnceSaid } from '../../../schemas/someone-once-said.schema';
+import { SomeoneOnceSaidService } from '../../models/someone-once-said/service/someone-once-said.service';
 
 export default class SomeoneOnceSaidCommand extends ACommand {
   constructor(

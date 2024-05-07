@@ -18,10 +18,10 @@ import {
     ApiResponse,
     ApiTags,
   } from '@nestjs/swagger';
-import { ReS } from '../../../common/res.model';
 import { BirthdayEntryService } from '../service/birthday-entry.service';
-import { BirthdayEntryDocument } from '../../../schemas/birthday-entry.schema';
 import { CreateOrUpdateBirthdayEntryDto } from '../dto/create-or-update-birthday-entry.dto';
+import { ReS } from '../../../../common/res.model';
+import { BirthdayEntryDocument } from '../../../../schemas/birthday-entry.schema';
   
   @Controller('birthday-entry')
   @ApiTags('birthday-entry')

@@ -1,8 +1,8 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { PollDocument } from '../../../schemas/poll.schema';
-import { PollEntity } from '../../../schemas/poll-entity.model';
 import { UpdatePollDto } from '../dto/update-poll.dto';
+import { PollEntity } from '../../../../schemas/poll-entity.model';
+import { PollDocument } from '../../../../schemas/poll.schema';
 
 export class DbPollService {
   constructor(

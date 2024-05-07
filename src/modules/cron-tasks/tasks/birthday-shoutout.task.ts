@@ -1,6 +1,6 @@
 import { EmbedBuilder, TextChannel } from 'discord.js'
 import { ITask } from './interfaces/task.interface'
-import { BirthdayEntryService } from '../../birthday/service/birthday-entry.service'
+import { BirthdayEntryService } from '../../models/birthday/service/birthday-entry.service'
 
 export default class BirthdayShoutoutTask implements ITask {
     private channel: TextChannel

@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { SlashCommandBuilder } from 'discord.js';
 import { ACommand } from '../command.abstract';
-import { VersionService } from '../../version/service/version.service';
+import { VersionService } from '../../models/version/service/version.service';
 
 @Injectable()
 export class VersionCommand extends ACommand {

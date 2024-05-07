@@ -5,7 +5,7 @@ import { Interaction } from './services/interaction';
 import { MessageEvent } from './services/messageEvent';
 import { DiscordModule } from '../discord/discord.module';
 import { CommandModule } from '../command/command.module';
-import { PollModule } from '../poll/module/poll.module';
+import { PollModule } from '../models/poll/module/poll.module';
 
 @Module({
   imports: [DiscordModule, CommandModule, PollModule],

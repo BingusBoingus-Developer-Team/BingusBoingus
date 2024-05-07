@@ -5,8 +5,8 @@ import {
   } from 'discord.js';
   import { ACommand } from '../command.abstract';
   import { Inject } from '@nestjs/common';
-  import { BirthdayEntryService } from '../../birthday/service/birthday-entry.service';
-import { CreateOrUpdateBirthdayEntryDto } from '../../birthday/dto/create-or-update-birthday-entry.dto';
+import { BirthdayEntryService } from '../../models/birthday/service/birthday-entry.service';
+import { CreateOrUpdateBirthdayEntryDto } from '../../models/birthday/dto/create-or-update-birthday-entry.dto';
   
   export default class ActivateBirthdayEntryShoutoutCommand extends ACommand {
     constructor(
