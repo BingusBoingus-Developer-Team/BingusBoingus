@@ -19,7 +19,7 @@ jobs:
       - name: Build image
         run: docker build --pull --rm -f "dockerfiles/Dockerfile.prod" --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}" .
       - name: Log in to registry
-        run: echo "${{ secrets.DEPLOY_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
       - name: Push image
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
