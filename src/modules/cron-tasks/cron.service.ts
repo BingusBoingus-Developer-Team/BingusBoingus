@@ -51,6 +51,7 @@ export class CronService {
         ),
       },
     ];
+    this.registerTasks();
   }
 
   registerTasks(): void {
