@@ -3,7 +3,7 @@ services:
   bingusboingus:
     hostname: bingusboingus
     pull_policy: always
-    image: ghcr.io/blvckleg/bingusboingus:dev
+    image: ghcr.io/bingusboingus-developer-team/bingusboingus:dev
     volumes:
       - .env:/home/node/.env.prod
     environment:
@@ -33,7 +33,7 @@ services:
           'CMD',
           'sh',
           '-c',
-          'echo ''db.runCommand("ping").ok'' | mongosh localhost:27017 --quiet'
+          'echo ''db.runCommand("ping").ok'' | mongosh localhost:27017 --quiet',
         ]
       interval: 10s
       timeout: 10s

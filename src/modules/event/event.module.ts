@@ -6,9 +6,10 @@ import { MessageEvent } from './services/messageEvent';
 import { DiscordModule } from '../discord/discord.module';
 import { CommandModule } from '../command/command.module';
 import { PollModule } from '../models/poll/module/poll.module';
+import { TaskModule } from '../cron-tasks/task.module';
 
 @Module({
-  imports: [DiscordModule, CommandModule, PollModule],
+  imports: [DiscordModule, TaskModule, CommandModule, PollModule],
   providers: [EventService, ClientReady, Interaction, MessageEvent],
   exports: [EventService],
 })
