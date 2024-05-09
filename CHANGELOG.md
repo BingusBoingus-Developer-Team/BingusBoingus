@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.3](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.2...v1.8.3) (2024-05-09)
+
+
+### Bug Fixes
+
+* **cron:** register tasks ([adc1cb1](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/adc1cb1b92f550b067f7a3c5b922c5cb1a0b10da))
+
 ## [1.8.2](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.1...v1.8.2) (2024-05-07)
 
 
