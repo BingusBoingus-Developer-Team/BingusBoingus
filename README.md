@@ -1,3 +1,5 @@
+![Banner](src/assets/bingusbanner.svg)
+
 🤖 Description:
 
 BingusBoingus is the bot you never knew you needed, mainly because it not really useful and just very silly instead! With BingusBoingus, expect the unexpected, and prepare for some hilariously quirky and utterly pointless commands that will make you wonder, "Why does this bot even exist?"
@@ -47,8 +49,6 @@ for more information on contributing and conventional commits please visit the [
 
 Built with [NestJs](https://github.com/nestjs)
 
-|     Tests     |     Builds    |    Version    |
-|:-------------:|:-------------:|:-------------:|
-| [![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml) | [![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml) | ![version-latest](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FBingusBoingus-Developer-Team%2FBingusBoingus%2Fraw%2Fmaster%2Fpackage.json&query=%24.version&label=latest)
-
-
+|                                                                                     Tests                                                                                      |                                                                                    Builds                                                                                    |                                                                                                Version                                                                                                |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [![tests](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-test.yml) | [![build](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml/badge.svg)](https://github.com/blvckleg/bingusboingus/actions/workflows/docker-dev.yml) | ![version-latest](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FBingusBoingus-Developer-Team%2FBingusBoingus%2Fraw%2Fmaster%2Fpackage.json&query=%24.version&label=latest) |
