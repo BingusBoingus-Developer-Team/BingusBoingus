@@ -8,6 +8,10 @@ import { ACommand } from '../command.abstract';
 import { Inject } from '@nestjs/common';
 import { SomeoneOnceSaid } from '../../../schemas/someone-once-said.schema';
 import { SomeoneOnceSaidService } from '../../models/someone-once-said/service/someone-once-said.service';
+import {
+  CommandAccessLevel,
+  Role,
+} from '../../../common/decoratos/role.decorator';
 
 export default class SomeoneOnceSaidCommand extends ACommand {
   constructor(
@@ -23,6 +27,7 @@ export default class SomeoneOnceSaidCommand extends ACommand {
       option.setName('phrase').setDescription('What was said'),
     );
 
+  @Role(CommandAccessLevel.vip)
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     const phrase = arg.options.get('phrase');
     if (!phrase) {

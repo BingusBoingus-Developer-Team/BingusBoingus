@@ -8,6 +8,10 @@ import { ACommand } from '../command.abstract';
 import { Inject } from '@nestjs/common';
 import { BirthdayEntryService } from '../../models/birthday/service/birthday-entry.service';
 import { CreateOrUpdateBirthdayEntryDto } from '../../models/birthday/dto/create-or-update-birthday-entry.dto';
+import {
+  CommandAccessLevel,
+  Role,
+} from '../../../common/decoratos/role.decorator';
 
 export default class AddBirthdayEntryCommand extends ACommand {
   constructor(
@@ -31,6 +35,7 @@ export default class AddBirthdayEntryCommand extends ACommand {
       option.setName('year').setDescription('your year of birth'),
     );
 
+  @Role(CommandAccessLevel.member)
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     const day = arg.options.get('day');
     const month = arg.options.get('month');
