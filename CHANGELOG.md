@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.3...v1.9.0) (2024-07-23)
+
+
+### Features
+
+* role decorator for specifying command access levels ([ac17653](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/ac1765396f6c2d64566ba36e939a986ce8e28b42))
+
 ## [1.8.3](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.2...v1.8.3) (2024-05-09)
 
 
