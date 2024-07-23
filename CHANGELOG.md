@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.0...v1.9.1) (2024-07-23)
+
+
+### Bug Fixes
+
+* hotfix caching error ([9842f19](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/9842f19b69ba60cb092a208b21841efe63fdb446))
+
 ## [1.9.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.3...v1.9.0) (2024-07-23)
 
 
