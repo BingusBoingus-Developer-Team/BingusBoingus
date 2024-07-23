@@ -11,9 +11,9 @@ export function Role(requiredRole: CommandAccessLevel) {
 
     descriptor.value = async function (...args) {
       const interaction: CommandInteraction = args[0];
-      const roles = interaction.guild.roles.cache;
+      const roles = interaction.member.roles as any;
       if (
-        !roles.has(requiredRole) &&
+        !roles?.cache?.has(requiredRole) &&
         requiredRole !== CommandAccessLevel.member
       ) {
         await interaction.reply({
