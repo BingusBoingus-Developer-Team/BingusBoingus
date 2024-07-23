@@ -1,15 +1,11 @@
 import { Inject, Injectable } from '@nestjs/common';
-import {
-  ActionRowBuilder,
-  ButtonBuilder,
-  ButtonStyle,
-  CacheType,
-  CommandInteraction,
-  EmbedBuilder,
-  SlashCommandBuilder,
-} from 'discord.js';
+import { CacheType, CommandInteraction, SlashCommandBuilder } from 'discord.js';
 import { ACommand } from '../command.abstract';
 import { PollService } from '../../models/poll/service/poll.service';
+import {
+  CommandAccessLevel,
+  Role,
+} from '../../../common/decoratos/role.decorator';
 
 @Injectable()
 export class PollCommand extends ACommand {
@@ -31,6 +27,7 @@ export class PollCommand extends ACommand {
         .setRequired(true),
     );
 
+  @Role(CommandAccessLevel.member)
   public execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     return this.run(async () => {
       this.pollService.create(arg);
