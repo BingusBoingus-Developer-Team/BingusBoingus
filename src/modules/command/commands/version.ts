@@ -2,6 +2,10 @@ import { Inject, Injectable } from '@nestjs/common';
 import { SlashCommandBuilder } from 'discord.js';
 import { ACommand } from '../command.abstract';
 import { VersionService } from '../../models/version/service/version.service';
+import {
+  CommandAccessLevel,
+  Role,
+} from '../../../common/decoratos/role.decorator';
 
 @Injectable()
 export class VersionCommand extends ACommand {
@@ -16,6 +20,7 @@ export class VersionCommand extends ACommand {
       'show the version of the currently running bingus instance',
     );
 
+  @Role(CommandAccessLevel.Developer)
   async execute(interaction) {
     const version = await this.versionService.getVersion();
     return this.run(async () => {
