@@ -14,15 +14,15 @@ export class MessageEvent extends AEvent {
       responseType: ResponseType.Reply,
     },
     {
-      matcher: /^.{150,}$/m,
+      matcher: /^.{200,}$/m,
       response: 'halbe Bibel, ganzer huansohn ?XD',
       responseType: ResponseType.Reply,
     },
-    {
-      matcher: /https:\/\/.*/,
-      response: 'send yo virus link to someone else no?xd',
-      responseType: ResponseType.Reply,
-    },
+    //{
+    //  matcher: /https:\/\/.*/,
+    //  response: 'send yo virus link to someone else no?xd',
+    //  responseType: ResponseType.Reply,
+    //},
     {
       matcher: /wadim/i,
       response: '#goth',
@@ -35,7 +35,7 @@ export class MessageEvent extends AEvent {
     },
     {
       matcher: /alina/i,
-      response: 'Schuhgröße 36, weißer Nagellack 🥵',
+      response: 'sanrio gf 👻',
       responseType: ResponseType.Message,
     },
     {
