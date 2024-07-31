@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.1...v1.9.2) (2024-07-31)
+
+
+### Bug Fixes
+
+* correct messageEvent.ts regex ([8a97383](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/8a9738354105e2c4bb616db3fa2dacd7ab636381))
+
 ## [1.9.1](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.0...v1.9.1) (2024-07-23)
 
 
