@@ -26,7 +26,7 @@ export function Role(requiredRole: CommandAccessLevel) {
     };
   };
 }
-
+//we have to refactor this with actual access levels
 export enum CommandAccessLevel {
   Developer = '1265375756637180027',
   vip = '484479705148293120',
