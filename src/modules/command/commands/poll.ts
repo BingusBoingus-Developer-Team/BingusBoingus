@@ -27,7 +27,7 @@ export class PollCommand extends ACommand {
         .setRequired(true),
     );
 
-  @Role(CommandAccessLevel.member)
+  // @Role(CommandAccessLevel.member)
   public execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     return this.run(async () => {
       this.pollService.create(arg);

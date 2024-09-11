@@ -12,7 +12,7 @@ export class CBDCommand extends ACommand {
     .setName('cbd')
     .setDescription('der hurensohn!');
 
-  @Role(CommandAccessLevel.vip)
+  // @Role(CommandAccessLevel.vip)
   async execute(interaction) {
     return this.run(async () => {
       await interaction.reply('Wenn der Hurensohn nur wüsste...');

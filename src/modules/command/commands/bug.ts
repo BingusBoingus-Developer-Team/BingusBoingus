@@ -12,7 +12,7 @@ export class BugReport extends ACommand {
     .setName('bug')
     .setDescription('report a bug to my maintainers!');
 
-  @Role(CommandAccessLevel.member)
+  // @Role(CommandAccessLevel.member)
   async execute(interaction) {
     return this.run(async () => {
       await interaction.reply(

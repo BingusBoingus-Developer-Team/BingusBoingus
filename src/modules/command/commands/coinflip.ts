@@ -12,7 +12,7 @@ export class CoinflipCommand extends ACommand {
     .setName('coinflip')
     .setDescription('Bingus flips a coin for you');
 
-  @Role(CommandAccessLevel.member)
+  // @Role(CommandAccessLevel.member)
   async execute(interaction) {
     return this.run(async () => {
       await interaction.reply(this.coinflip());

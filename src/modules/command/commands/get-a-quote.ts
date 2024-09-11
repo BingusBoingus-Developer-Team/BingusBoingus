@@ -23,7 +23,7 @@ export default class GetRandomQuote extends ACommand {
     .setName('randomquote')
     .setDescription('get a random quote of a user');
 
-  @Role(CommandAccessLevel.member)
+  // @Role(CommandAccessLevel.member)
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     const someoneOnceSaid = await this.someoneonceSaidService.getRandomQuote();
     if (!someoneOnceSaid) return;

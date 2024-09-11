@@ -12,7 +12,7 @@ export class GoldCommand extends ACommand {
     .setName('gold')
     .setDescription('schweigen ist gold!');
 
-  @Role(CommandAccessLevel.vip)
+  // @Role(CommandAccessLevel.vip)
   public execute(arg: any /*Interaction<CacheType>*/): Promise<boolean> {
     return this.run(async () => {
       await arg.reply({

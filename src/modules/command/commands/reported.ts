@@ -12,7 +12,7 @@ export class ReportedCommand extends ACommand {
     .setName('reported')
     .setDescription('swag reports someone');
 
-  @Role(CommandAccessLevel.member)
+  // @Role(CommandAccessLevel.member)
   public execute(arg: any /*Interaction<CacheType>*/): Promise<boolean> {
     return this.run(async () => {
       await arg.reply({

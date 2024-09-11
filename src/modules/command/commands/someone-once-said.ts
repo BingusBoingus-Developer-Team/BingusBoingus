@@ -27,7 +27,7 @@ export default class SomeoneOnceSaidCommand extends ACommand {
       option.setName('phrase').setDescription('What was said'),
     );
 
-  @Role(CommandAccessLevel.vip)
+  // @Role(CommandAccessLevel.vip)
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     const phrase = arg.options.get('phrase');
     if (!phrase) {
