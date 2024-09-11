@@ -35,7 +35,7 @@ export default class AddBirthdayEntryCommand extends ACommand {
       option.setName('year').setDescription('your year of birth'),
     );
 
-  @Role(CommandAccessLevel.member)
+  // @Role(CommandAccessLevel.member)
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     const day = arg.options.get('day');
     const month = arg.options.get('month');

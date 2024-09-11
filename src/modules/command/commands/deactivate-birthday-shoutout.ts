@@ -21,7 +21,7 @@ export default class DeactivateBirthdayEntryShoutoutCommand extends ACommand {
       "Use this if you don't want Bingus to shout you out on your birthday!",
     );
 
-  @Role(CommandAccessLevel.member)
+  // @Role(CommandAccessLevel.member)
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
     await arg.deferReply();
     const instance: CreateOrUpdateBirthdayEntryDto = {
