@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.3](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.2...v1.9.3) (2024-09-11)
+
+
+### Bug Fixes
+
+* comment on workaround fix to rework later ([b27a4eb](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/b27a4eb25b165e72e8aece70955299d2a69191a2))
+
 ## [1.9.2](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.1...v1.9.2) (2024-07-31)
 
 
