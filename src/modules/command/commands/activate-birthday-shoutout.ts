@@ -27,6 +27,7 @@ export default class ActivateBirthdayEntryShoutoutCommand extends ACommand {
     const instance: CreateOrUpdateBirthdayEntryDto = {
       username: arg.user.username,
       secName: arg.user.displayName,
+      serverId: arg.guildId,
       active: true,
     };
     const inactive =

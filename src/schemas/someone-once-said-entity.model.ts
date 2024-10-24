@@ -3,4 +3,5 @@ export class SomeoneOnceSaidEntity {
   username: string;
   secName?: string;
   createdAt: Date;
+  serverId: string;
 }

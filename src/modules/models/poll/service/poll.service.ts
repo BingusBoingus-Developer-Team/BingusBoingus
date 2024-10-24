@@ -65,6 +65,7 @@ export class PollService {
       downMembers: [],
       active: true,
       ownerName: arg.user.username,
+      serverId: arg.guild.id,
       createdAt: new Date(),
     });
   }
@@ -79,7 +80,10 @@ export class PollService {
   }
 
   public async upVote(interaction: ButtonInteraction<CacheType>) {
-    const data = await this.dbPollService.get(interaction.message.id);
+    const data = await this.dbPollService.get(
+      interaction.message.id,
+      interaction.guild.id,
+    );
     if (!data) return;
 
     const msg = await interaction.channel.messages.fetch(data.msg);
@@ -103,7 +107,10 @@ export class PollService {
   }
 
   public async downVote(interaction: ButtonInteraction<CacheType>) {
-    const data = await this.dbPollService.get(interaction.message.id);
+    const data = await this.dbPollService.get(
+      interaction.message.id,
+      interaction.guild.id,
+    );
     if (!data) return;
 
     const msg = await interaction.channel.messages.fetch(data.msg);
@@ -127,7 +134,10 @@ export class PollService {
   }
 
   public async closePoll(interaction: ButtonInteraction<CacheType>) {
-    const data = await this.dbPollService.get(interaction.message.id);
+    const data = await this.dbPollService.get(
+      interaction.message.id,
+      interaction.guild.id,
+    );
     if (!data) return;
     const msg = await interaction.channel.messages.fetch(data.msg);
     if (interaction.user.username == data.ownerName) {

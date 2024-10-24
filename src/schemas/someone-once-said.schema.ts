@@ -12,6 +12,9 @@ export class SomeoneOnceSaid {
   secName: string;
 
   @Prop({ required: true })
+  serverId: string;
+
+  @Prop({ required: true })
   createdAt: Date;
 
   constructor(data) {

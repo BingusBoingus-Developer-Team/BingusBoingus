@@ -25,7 +25,9 @@ export default class GetRandomQuote extends ACommand {
 
   // @Role(CommandAccessLevel.member)
   async execute(arg: CommandInteraction<CacheType>): Promise<boolean> {
-    const someoneOnceSaid = await this.someoneonceSaidService.getRandomQuote();
+    const someoneOnceSaid = await this.someoneonceSaidService.getRandomQuote(
+      arg.guildId,
+    );
     if (!someoneOnceSaid) return;
     const quoteEmbed = new EmbedBuilder()
       .setTitle(
