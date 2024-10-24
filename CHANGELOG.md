@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.0.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.3...v2.0.0) (2024-10-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove old script, all commands support multiple servers now
+
+### Features
+
+* all existing commands support on multiple servers ([4f710bd](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/4f710bde6ccf2eb39069c2854036e0fe5da41655))
+* new configure command to configure a textchannel for all cron tasks ([3a190bb](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/3a190bb61db991050af21411e31e036d6104b5bd))
+
+
+### Bug Fixes
+
+* adjust test mocks ([01bcb44](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/01bcb44ca8496d36420b0a4e50277dfe3bc95251))
+* deploy commands to all servers, register on all ([f4fa935](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/f4fa935a134075be96bf5bdf58832361f45c8592))
+* remove old script, all commands support multiple servers now ([642ee88](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/642ee88a12ed5b4077d4c550f958f6e0e78263d4))
+
 ## [1.9.3](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.2...v1.9.3) (2024-09-11)
 
 
