@@ -14,6 +14,7 @@ import { BirthdayEntry } from '../../schemas/birthday-entry.schema';
 import AddBirthdayEntryCommand from './commands/add-birthday-entry';
 import DeactivateBirthdayEntryShoutoutCommand from './commands/deactivate-birthday-shoutout';
 import ActivateBirthdayEntryShoutoutCommand from './commands/activate-birthday-shoutout';
+import ConfigureServerChannelCommand from './commands/server-config';
 
 @Injectable()
 export class CommandService {
@@ -34,6 +35,7 @@ export class CommandService {
     addBirthdayEntryModule: AddBirthdayEntryCommand,
     deactivateBirthdayEntryShoutoutModule: DeactivateBirthdayEntryShoutoutCommand,
     activateBirthdayEntryShoutoutModule: ActivateBirthdayEntryShoutoutCommand,
+    configureServerChannelIdModule: ConfigureServerChannelCommand,
   ) {
     const commands: ACommand[] = [
       //pingpongModule,
@@ -50,6 +52,7 @@ export class CommandService {
       addBirthdayEntryModule,
       deactivateBirthdayEntryShoutoutModule,
       activateBirthdayEntryShoutoutModule,
+      configureServerChannelIdModule,
     ];
     commands.forEach((command) => {
       if (command.data.name && !!command.execute) {

@@ -1,26 +1,27 @@
-import { IsNotEmpty, IsOptional } from "class-validator";
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class UpdatePollDto {
-    @IsNotEmpty()
-    msg: string;
+  @IsNotEmpty()
+  msg: string;
 
-    @IsNotEmpty()
-    upvotes: number;
+  @IsNotEmpty()
+  upvotes: number;
 
-    @IsNotEmpty()
-    downvotes: number;
+  @IsNotEmpty()
+  downvotes: number;
 
-    @IsOptional()
-    active: boolean;
+  @IsNotEmpty()
+  serverId: string;
 
-    @IsOptional()
-    ownerName: string;
+  @IsOptional()
+  active: boolean;
 
-    @IsOptional()
-    downMembers: string[]
+  @IsOptional()
+  ownerName: string;
 
-    @IsOptional()
-    upMembers: string[]
+  @IsOptional()
+  downMembers: string[];
 
-
+  @IsOptional()
+  upMembers: string[];
 }

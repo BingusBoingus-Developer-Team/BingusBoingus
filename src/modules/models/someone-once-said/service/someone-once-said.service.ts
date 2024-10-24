@@ -17,21 +17,26 @@ export class SomeoneOnceSaidService {
         phrase: quoteDto.phrase,
         username: quoteDto.username,
         secName: quoteDto?.secName,
+        serverId: quoteDto.serverId,
         createdAt: new Date(),
       });
     } catch (e) {
       return null;
     }
   }
-  
-  async getRandomQuote(): Promise<SomeoneOnceSaidDocument | null> {
+
+  async getRandomQuote(
+    serverId: string,
+  ): Promise<SomeoneOnceSaidDocument | null> {
     try {
-      const count = await this.someoneOnceSaid.countDocuments();
+      const count = await this.someoneOnceSaid.countDocuments({
+        serverId: serverId,
+      });
 
       const randomIndex = Math.floor(Math.random() * count);
 
       const randomQuote = await this.someoneOnceSaid
-        .findOne()
+        .findOne({ serverId: serverId })
         .skip(randomIndex)
         .limit(1);
 

@@ -24,6 +24,9 @@ export class Poll {
   active: boolean;
 
   @Prop({ required: true })
+  serverId: string;
+
+  @Prop({ required: true })
   createdAt: Date;
 
   constructor(data) {
@@ -33,5 +36,4 @@ export class Poll {
 
 export type PollDocument = Poll & Document;
 
-export const PollSchema =
-  SchemaFactory.createForClass(Poll);
+export const PollSchema = SchemaFactory.createForClass(Poll);
