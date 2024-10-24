@@ -18,6 +18,8 @@ import { SomeoneOnceSaidModule } from '../models/someone-once-said/module/someon
 import { PollModule } from '../models/poll/module/poll.module';
 import { VersionModule } from '../models/version/module/version.module';
 import { BirthdayEntryModule } from '../models/birthday/module/birthday-entry.module';
+import ConfigureServerChannelCommand from './commands/server-config';
+import { ServerConfigModule } from '../models/config/module/server-config.module';
 
 @Module({
   providers: [
@@ -34,10 +36,17 @@ import { BirthdayEntryModule } from '../models/birthday/module/birthday-entry.mo
     PollCommand,
     VersionCommand,
     AddBirthdayEntryCommand,
+    ConfigureServerChannelCommand,
     DeactivateBirthdayEntryShoutoutCommand,
     ActivateBirthdayEntryShoutoutCommand,
   ],
-  imports: [SomeoneOnceSaidModule, PollModule, VersionModule, BirthdayEntryModule],
+  imports: [
+    SomeoneOnceSaidModule,
+    PollModule,
+    VersionModule,
+    BirthdayEntryModule,
+    ServerConfigModule,
+  ],
   exports: [CommandService],
 })
 export class CommandModule {}

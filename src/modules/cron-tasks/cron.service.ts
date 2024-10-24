@@ -1,4 +1,4 @@
-import { Client, TextChannel } from 'discord.js';
+import { TextChannel } from 'discord.js';
 import BirthdayShoutoutTask from './tasks/birthday-shoutout.task';
 import { Inject, Injectable } from '@nestjs/common';
 import WakeUpTask from './tasks/wake-up.task';
@@ -6,6 +6,8 @@ import * as cron from 'node-cron';
 import { BirthdayEntryService } from '../models/birthday/service/birthday-entry.service';
 import { TaskEntry } from './interfaces/task-entry.interface';
 import { DiscordService } from '../discord/discord.service';
+import { ServerConfigService } from '../models/config/service/server-config.service';
+import { ServerConfigDocument } from '../../schemas/server-config.schema';
 
 @Injectable()
 export class CronService {
@@ -17,6 +19,8 @@ export class CronService {
     private readonly birthdayService: BirthdayEntryService,
     @Inject(DiscordService)
     private readonly discordService: DiscordService,
+    @Inject(ServerConfigService)
+    private readonly serverConfigService: ServerConfigService,
   ) {
     if (CronService.instance) {
       throw new Error(`ERROR: An instance has already been created.`);
@@ -29,28 +33,32 @@ export class CronService {
     return CronService.instance;
   }
 
-  public init() {
-    this.tasks = [
-      {
+  public async init() {
+    const servers: ServerConfigDocument[] =
+      await this.serverConfigService.getAll();
+    let birthdayTasks = [];
+    servers.forEach((server) => {
+      const birthdayChannel = this.discordService.client.channels.cache.find(
+        (channel) => channel.id === server.channelId,
+      ) as TextChannel;
+      birthdayTasks.push({
         name: 'birthday-shoutout',
         schedule: '0 10 * * *',
-        task: new BirthdayShoutoutTask(
-          this.discordService.client.channels.cache.find(
-            (channel) => channel.id === '447554141724737548',
-          ) as TextChannel,
-          this.birthdayService,
-        ),
-      },
-      {
+        task: new BirthdayShoutoutTask(birthdayChannel, this.birthdayService),
+      });
+    });
+    let wakeUpTasks = [];
+    servers.forEach((server) => {
+      const wakeUpChannel = this.discordService.client.channels.cache.find(
+        (channel) => channel.id === server.channelId,
+      ) as TextChannel;
+      wakeUpTasks.push({
         name: 'first-of-the-month',
         schedule: '0 12 1 * *',
-        task: new WakeUpTask(
-          this.discordService.client.channels.cache.find(
-            (channel) => channel.id === '447554141724737548',
-          ) as TextChannel,
-        ),
-      },
-    ];
+        task: new WakeUpTask(wakeUpChannel),
+      });
+    });
+    this.tasks = [...birthdayTasks, ...wakeUpTasks];
     this.registerTasks();
   }
 
