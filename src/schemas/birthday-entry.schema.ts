@@ -7,12 +7,15 @@ export class BirthdayEntry {
 
   @Prop({ required: false })
   secName: string;
-  
+
   @Prop({ required: true })
   birthDate: Date;
 
   @Prop({ required: true })
   active: boolean;
+
+  @Prop({ required: true })
+  serverId: string;
 
   @Prop({ required: true })
   createdAt: Date;
@@ -24,5 +27,4 @@ export class BirthdayEntry {
 
 export type BirthdayEntryDocument = BirthdayEntry & Document;
 
-export const BirthdayEntrySchema =
-  SchemaFactory.createForClass(BirthdayEntry);
+export const BirthdayEntrySchema = SchemaFactory.createForClass(BirthdayEntry);

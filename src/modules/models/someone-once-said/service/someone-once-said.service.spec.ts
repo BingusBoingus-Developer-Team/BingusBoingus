@@ -14,6 +14,7 @@ describe('SomeoneOnceSaidService', () => {
     phrase: 'Test quote',
     username: 'testUser',
     secName: 'Teschter',
+    serverId: 'someid',
     createdAt: mockDate,
   };
   const mockQuoteDocument: SomeoneOnceSaidDocument = {
@@ -64,6 +65,7 @@ describe('SomeoneOnceSaidService', () => {
       const mockQuoteDto: SomeoneOnceSaidEntity = {
         phrase: 'Test quote',
         username: 'testUser',
+        serverId: 'someid',
         createdAt: mockDate,
       };
       (modelMock as any).create = jest.fn((p) => new Error('Test error'));
@@ -73,7 +75,6 @@ describe('SomeoneOnceSaidService', () => {
       expect(result).toStrictEqual(new MongooseError('Test error'));
     });
   });
-
 
   describe('getRandomQuote', () => {
     it('should return a random quote', async () => {
@@ -85,7 +86,7 @@ describe('SomeoneOnceSaidService', () => {
       const countSpy = jest.spyOn(modelMock, 'countDocuments');
       const findOneSpy = jest.spyOn(modelMock, 'findOne');
 
-      const result = await service.getRandomQuote();
+      const result = await service.getRandomQuote('someid');
 
       expect(result).toStrictEqual(mockQuoteDocument);
       expect(countSpy).toHaveBeenCalled();
@@ -97,7 +98,7 @@ describe('SomeoneOnceSaidService', () => {
         (p) => new Error('Test error'),
       );
 
-      const result = await service.getRandomQuote();
+      const result = await service.getRandomQuote('someid');
 
       expect(result).toBeNull();
     });

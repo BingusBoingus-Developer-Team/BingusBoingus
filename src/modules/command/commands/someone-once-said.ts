@@ -12,6 +12,7 @@ import {
   CommandAccessLevel,
   Role,
 } from '../../../common/decoratos/role.decorator';
+import { server } from 'typescript';
 
 export default class SomeoneOnceSaidCommand extends ACommand {
   constructor(
@@ -46,6 +47,7 @@ export default class SomeoneOnceSaidCommand extends ACommand {
       phrase: phraseValue,
       username: arg.user.username,
       secName: arg.user.displayName,
+      serverId: arg.guildId,
     });
     const created = await this.someoneonceSaidService.create(instance);
     const quoteEmbed = new EmbedBuilder()

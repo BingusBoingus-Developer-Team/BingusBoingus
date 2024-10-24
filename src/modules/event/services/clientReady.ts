@@ -16,6 +16,6 @@ export class ClientReady extends AEvent {
     console.log('Successfully connected to Discord');
     console.log(`logged in as ${args[0].user.username}`);
 
-    this.cronService.init();
+    await this.cronService.init();
   }
 }

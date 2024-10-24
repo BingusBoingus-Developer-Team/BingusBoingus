@@ -19,6 +19,7 @@ export class DbPollService {
         downvotes: pollDto.downvotes,
         upMembers: pollDto?.upMembers ?? [],
         downMembers: pollDto?.downMembers ?? [],
+        serverId: pollDto.serverId,
         active: true,
         createdAt: new Date(),
       });
@@ -28,10 +29,12 @@ export class DbPollService {
     }
   }
 
-  async update(updateDto: UpdatePollDto): Promise<PollDocument | null | undefined> {
+  async update(
+    updateDto: UpdatePollDto,
+  ): Promise<PollDocument | null | undefined> {
     try {
       return await this.pollModel.findOneAndUpdate(
-        { msg: updateDto.msg },
+        { msg: updateDto.msg, serverId: updateDto.serverId },
         {
           upvotes: updateDto.upvotes,
           downvotes: updateDto?.downvotes,
@@ -46,10 +49,14 @@ export class DbPollService {
     }
   }
 
-  async get(messageId: string): Promise<PollDocument | undefined> {
+  async get(
+    messageId: string,
+    serverId: string,
+  ): Promise<PollDocument | undefined> {
     try {
       const test = await this.pollModel.findOne({
         msg: messageId,
+        serverId: serverId,
         active: true,
       });
       return test;

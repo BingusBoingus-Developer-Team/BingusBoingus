@@ -19,6 +19,14 @@ export class CreateOrUpdateBirthdayEntryDto {
   secName: string;
 
   @ApiProperty({
+    example: '12398182390132',
+    description: 'The discord serverId the interaction comes from',
+    type: String,
+  })
+  @IsNotEmpty()
+  serverId: string;
+
+  @ApiProperty({
     example: '2024-01-01T00:00:00.000Z',
     description: 'The birthdate of the user in ISO format',
     type: String,

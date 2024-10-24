@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.9.3](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.2...v1.9.3) (2024-09-11)
+
+
+### Bug Fixes
+
+* comment on workaround fix to rework later ([b27a4eb](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/b27a4eb25b165e72e8aece70955299d2a69191a2))
+
+## [1.9.2](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.1...v1.9.2) (2024-07-31)
+
+
+### Bug Fixes
+
+* correct messageEvent.ts regex ([8a97383](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/8a9738354105e2c4bb616db3fa2dacd7ab636381))
+
+## [1.9.1](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.0...v1.9.1) (2024-07-23)
+
+
+### Bug Fixes
+
+* hotfix caching error ([9842f19](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/9842f19b69ba60cb092a208b21841efe63fdb446))
+
+## [1.9.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.3...v1.9.0) (2024-07-23)
+
+
+### Features
+
+* role decorator for specifying command access levels ([ac17653](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/ac1765396f6c2d64566ba36e939a986ce8e28b42))
+
 ## [1.8.3](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.8.2...v1.8.3) (2024-05-09)
 
 

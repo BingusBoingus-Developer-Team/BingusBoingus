@@ -8,8 +8,13 @@ export class BirthdayEntryService {
     @InjectModel('BirthdayEntry')
     private readonly birthdayEntry: Model<BirthdayEntryDocument>,
   ) {}
-  async createOrUpdateBirthdayEntry(birthdayEntryDto: CreateOrUpdateBirthdayEntryDto,) {
-    const birthdayEntry = await this.birthdayEntry.findOne({ username: birthdayEntryDto.username });
+  async createOrUpdateBirthdayEntry(
+    birthdayEntryDto: CreateOrUpdateBirthdayEntryDto,
+  ) {
+    const birthdayEntry = await this.birthdayEntry.findOne({
+      username: birthdayEntryDto.username,
+      serverId: birthdayEntryDto.serverId,
+    });
     if (birthdayEntry) {
       return await this.updateBirthdayEntry(birthdayEntryDto);
     } else {
@@ -26,6 +31,7 @@ export class BirthdayEntryService {
         secName: birthdayEntryDto?.secName,
         birthDate: birthdayEntryDto.birthDate,
         active: true,
+        serverId: birthdayEntryDto.serverId,
         createdAt: new Date(),
       });
     } catch (e) {
@@ -33,7 +39,9 @@ export class BirthdayEntryService {
     }
   }
 
-  async updateBirthdayEntry(birthdayEntryDto: CreateOrUpdateBirthdayEntryDto): Promise<BirthdayEntryDocument> {
+  async updateBirthdayEntry(
+    birthdayEntryDto: CreateOrUpdateBirthdayEntryDto,
+  ): Promise<BirthdayEntryDocument> {
     try {
       return await this.birthdayEntry.findOneAndUpdate(
         { username: birthdayEntryDto.username },
@@ -51,22 +59,23 @@ export class BirthdayEntryService {
 
   async getEntryForToday(): Promise<BirthdayEntryDocument[]> {
     try {
-      const entries = await this.birthdayEntry.find<BirthdayEntryDocument>({ active: true });
+      const entries = await this.birthdayEntry.find<BirthdayEntryDocument>({
+        active: true,
+      });
       if (!entries) {
-          return null
+        return null;
       }
 
-      const today = new Date()
+      const today = new Date();
 
-      return entries
-          .filter((entry) => {
-              const date = new Date(entry.birthDate)
-              return (
-                date.getFullYear() !== today.getFullYear() &&
-                date.getMonth() === today.getMonth() &&
-                date.getDate() === today.getDate()
-              )
-          })
+      return entries.filter((entry) => {
+        const date = new Date(entry.birthDate);
+        return (
+          date.getFullYear() !== today.getFullYear() &&
+          date.getMonth() === today.getMonth() &&
+          date.getDate() === today.getDate()
+        );
+      });
     } catch (e) {
       return null;
     }
