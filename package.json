@@ -8,7 +8,6 @@
     "build": "npm run deldist && tsc -p .",
     "start:ts-node": "ts-node src/main.ts",
     "start": "nest start",
-    "tunnel": "ngrok http 3000",
     "start:debug": "nest start --debug --watch",
     "build:prod": "docker build --pull --rm -f \"dockerfiles\\Dockerfile.prod\" -t ghcr.io/blvckleg/bingusboingus:latest \".\"",
     "build:test": "docker build --pull --rm -f \"dockerfiles\\Dockerfile.test\" -t ghcr.io/blvckleg/bingusboingus:test \".\"",
