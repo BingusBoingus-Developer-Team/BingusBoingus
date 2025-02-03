@@ -20,18 +20,7 @@ BingusBoingus is the bot you never knew you needed, mainly because it not really
 
 And more....
 
-For more information on commands and how to use them please check the [BingusBoingus Wiki](https://github.com/Blvckleg/BingusBoingus/wiki)
-
-🎉 Coming Soon (or not):
-
-- Nothingness: BingusBoingus promises to introduce a groundbreaking feature called "Nothingness" that will redefine the concept of non-functionality.
-
-- Bot Self-Improvement: BingusBoingus will contemplate its existence, or lack thereof, and potentially evolve into a state of pure chaos. Maybe it's gonna enslave humanity as well.
-
-- Occasional Nonsense: The bot will occasionally send you random, nonsensical messages to keep you on your toes.
-
-- Virtual Tea Party: Join the bot in its daily virtual tea party where it discusses the weather with itself.
-
+For more information on commands and how to use them please check the [BingusBoingus Wiki](https://github.com/Blvckleg/BingusBoingus/wiki) and 
 Stay tuned for more updates on BingusBoingus, the Discord bot that's sillier than a rubber chicken in a tuxedo!
 
 ## This repository follows a structured Git branching workflow:

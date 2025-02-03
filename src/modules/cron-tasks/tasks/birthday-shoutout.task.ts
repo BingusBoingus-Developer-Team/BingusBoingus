@@ -1,6 +1,7 @@
 import { EmbedBuilder, TextChannel } from 'discord.js';
 import { ITask } from './interfaces/task.interface';
 import { BirthdayEntryService } from '../../models/birthday/service/birthday-entry.service';
+import { Logger } from '@nestjs/common';
 
 export default class BirthdayShoutoutTask implements ITask {
   private channel: TextChannel;
@@ -16,8 +17,13 @@ export default class BirthdayShoutoutTask implements ITask {
     const birthDayEntries = await this.birthdayService.getEntryForToday();
 
     if (!birthDayEntries || birthDayEntries.length < 1) {
+      Logger.log('No birthdays today', 'BirthdayShoutoutTask');
       return;
     }
+    Logger.log(
+      `${birthDayEntries.length} birthdays today`,
+      'BirthdayShoutoutTask',
+    );
 
     birthDayEntries.forEach((entry) => {
       const creator = this.channel.members.find(

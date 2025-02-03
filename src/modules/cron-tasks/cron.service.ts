@@ -1,6 +1,6 @@
 import { TextChannel } from 'discord.js';
 import BirthdayShoutoutTask from './tasks/birthday-shoutout.task';
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import WakeUpTask from './tasks/wake-up.task';
 import * as cron from 'node-cron';
 import { BirthdayEntryService } from '../models/birthday/service/birthday-entry.service';
@@ -57,6 +57,18 @@ export class CronService {
         schedule: '0 12 1 * *',
         task: new WakeUpTask(wakeUpChannel),
       });
+    });
+    Logger.log(`BirthdayTasks: ${birthdayTasks?.length ?? 0}`);
+    (birthdayTasks ?? []).forEach((task) => {
+      Logger.log(
+        `Birthdaytask: ${task.name} - ${task.schedule} - Server: ${task.task.channel.id}`,
+      );
+    });
+    Logger.log(`WakeUpTasks: ${wakeUpTasks?.length ?? 0}`);
+    (wakeUpTasks ?? []).forEach((task) => {
+      Logger.log(
+        `WakeUptask: ${task.name} - ${task.schedule} - Server: ${task.task.channel.id}`,
+      );
     });
     this.tasks = [...birthdayTasks, ...wakeUpTasks];
     this.registerTasks();
