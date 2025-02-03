@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v2.0.0...v2.1.0) (2025-02-03)
+
+
+### Features
+
+* add logging ([868e310](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/868e310750e8fee2b98734fbba0574401a7dabe5))
+
 ## [2.0.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.3...v2.0.0) (2024-10-24)
 
 
