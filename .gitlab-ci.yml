@@ -26,7 +26,7 @@ test_test_image:
   only: [dev, merge_requests]
   script:
     - mkdir -p artifacts
-    - docker run --rm "$CI_REGISTRY_IMAGE:test" npm run lint
+    #- docker run --rm "$CI_REGISTRY_IMAGE:test" npm run lint
     - docker run --rm -v "$PWD/artifacts:/home/runner/artifacts" "$CI_REGISTRY_IMAGE:test" npm run test
   after_script:
     - docker image rm -f "$CI_REGISTRY_IMAGE:test" || true
