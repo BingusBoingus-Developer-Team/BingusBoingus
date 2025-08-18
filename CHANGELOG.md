@@ -1,5 +1,19 @@
 # Changelog
 
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.2.0](https://github.com/Blvckleg/BingusBoingus/compare/v2.1.0...v2.2.0) (2025-08-18)
+
+
+### Features
+
+* wip channel reload ([ec6a91f](https://github.com/Blvckleg/BingusBoingus/commit/ec6a91f27123c614320c4ce2a51041f1d5ed138b))
+
+
+### Bug Fixes
+
+* docker lint files ([d7acbbb](https://github.com/Blvckleg/BingusBoingus/commit/d7acbbbde12771050c9ee6f2c01cf9449c1ef2de))
+
 ## [2.1.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v2.0.0...v2.1.0) (2025-02-03)
 
 
