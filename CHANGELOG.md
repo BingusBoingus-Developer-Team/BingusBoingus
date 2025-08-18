@@ -1,5 +1,45 @@
 # Changelog
 
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.2.0](https://github.com/Blvckleg/BingusBoingus/compare/v2.1.0...v2.2.0) (2025-08-18)
+
+
+### Features
+
+* wip channel reload ([ec6a91f](https://github.com/Blvckleg/BingusBoingus/commit/ec6a91f27123c614320c4ce2a51041f1d5ed138b))
+
+
+### Bug Fixes
+
+* docker lint files ([d7acbbb](https://github.com/Blvckleg/BingusBoingus/commit/d7acbbbde12771050c9ee6f2c01cf9449c1ef2de))
+
+## [2.1.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v2.0.0...v2.1.0) (2025-02-03)
+
+
+### Features
+
+* add logging ([868e310](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/868e310750e8fee2b98734fbba0574401a7dabe5))
+
+## [2.0.0](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.3...v2.0.0) (2024-10-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove old script, all commands support multiple servers now
+
+### Features
+
+* all existing commands support on multiple servers ([4f710bd](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/4f710bde6ccf2eb39069c2854036e0fe5da41655))
+* new configure command to configure a textchannel for all cron tasks ([3a190bb](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/3a190bb61db991050af21411e31e036d6104b5bd))
+
+
+### Bug Fixes
+
+* adjust test mocks ([01bcb44](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/01bcb44ca8496d36420b0a4e50277dfe3bc95251))
+* deploy commands to all servers, register on all ([f4fa935](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/f4fa935a134075be96bf5bdf58832361f45c8592))
+* remove old script, all commands support multiple servers now ([642ee88](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/commit/642ee88a12ed5b4077d4c550f958f6e0e78263d4))
+
 ## [1.9.3](https://github.com/BingusBoingus-Developer-Team/BingusBoingus/compare/v1.9.2...v1.9.3) (2024-09-11)
 
 
