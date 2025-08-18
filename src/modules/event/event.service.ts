@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ClientEvents, Collection, Events } from 'discord.js';
+import { ClientEvents } from 'discord.js';
 import { AEvent, EventKey } from './event.abstract';
 import { ClientReady } from './services/clientReady';
 import { Interaction } from './services/interaction';

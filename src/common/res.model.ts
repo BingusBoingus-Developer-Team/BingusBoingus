@@ -32,4 +32,3 @@ export class ReE extends ReturnHelper {
   @ApiProperty({ description: 'error description' })
   public error: string;
 }
-

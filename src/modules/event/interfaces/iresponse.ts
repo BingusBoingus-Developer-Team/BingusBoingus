@@ -1,6 +1,6 @@
 export interface IResponse {
   matcher: RegExp;
-  response: string | Object;
+  response: string | any;
   responseType?: ResponseType;
 }
 

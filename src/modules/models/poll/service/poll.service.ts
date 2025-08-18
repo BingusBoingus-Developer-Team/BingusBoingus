@@ -139,7 +139,7 @@ export class PollService {
       interaction.guild.id,
     );
     if (!data) return;
-    const msg = await interaction.channel.messages.fetch(data.msg);
+    await interaction.channel.messages.fetch(data.msg);
     if (interaction.user.username == data.ownerName) {
       data.active = false;
       await this.dbPollService.update(data);

@@ -8,7 +8,8 @@ import {
 export abstract class ACommand {
   data:
     | SlashCommandBuilder
-    | Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'> | SlashCommandOptionsOnlyBuilder;
+    | Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>
+    | SlashCommandOptionsOnlyBuilder;
 
   public abstract execute(arg: CommandInteraction<CacheType>): Promise<boolean>;
 

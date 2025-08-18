@@ -41,8 +41,7 @@ export default class ConfigureServerChannelCommand extends ACommand {
       channelId: channelIdValue,
       serverId: arg.guildId,
     };
-    const created =
-      await this.configService.createOrUpdateServerConfig(instance);
+    await this.configService.createOrUpdateServerConfig(instance);
     const quoteEmbed = new EmbedBuilder()
       .setTitle('Your scheduled messages textchannel was configured! 🤓')
       .setDescription('🤓')
@@ -54,4 +53,3 @@ export default class ConfigureServerChannelCommand extends ACommand {
     return true;
   }
 }
-

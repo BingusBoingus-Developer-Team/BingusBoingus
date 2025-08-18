@@ -1,6 +1,5 @@
-
 interface ITask {
-    execute(...args: any): Promise<void>
+  execute(...args: any): Promise<void>;
 }
 
-export type { ITask }
+export type { ITask };
