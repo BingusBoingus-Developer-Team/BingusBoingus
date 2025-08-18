@@ -2,11 +2,15 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateOrUpdateServerConfigDto } from '../dto/create-or-update-server-config.dto';
 import { ServerConfigDocument } from '../../../../schemas/server-config.schema';
+import { CronService } from '../../../cron-tasks/cron.service';
+import { forwardRef, Inject } from '@nestjs/common';
 
 export class ServerConfigService {
   constructor(
     @InjectModel('ServerConfig')
     private readonly serverConfig: Model<ServerConfigDocument>,
+    @Inject(forwardRef(() => CronService))
+    private readonly cronService: CronService,
   ) {}
   async createOrUpdateServerConfig(
     serverConfigDto: CreateOrUpdateServerConfigDto,
@@ -15,14 +19,17 @@ export class ServerConfigService {
       channelId: serverConfigDto.channelId,
       serverId: serverConfigDto.serverId,
     });
+    let res;
     if (entry) {
-      return await this.updateEntry(serverConfigDto);
+      res = await this.updateEntry(serverConfigDto);
     } else {
-      return await this.create(serverConfigDto);
+      res = await this.create(serverConfigDto);
     }
+    await this.cronService.init(true);
+    return res;
   }
 
-  async create(
+  private async create(
     birthdayEntryDto: CreateOrUpdateServerConfigDto,
   ): Promise<ServerConfigDocument> {
     try {
@@ -35,7 +42,7 @@ export class ServerConfigService {
     }
   }
 
-  async updateEntry(
+  private async updateEntry(
     dto: CreateOrUpdateServerConfigDto,
   ): Promise<ServerConfigDocument> {
     try {
