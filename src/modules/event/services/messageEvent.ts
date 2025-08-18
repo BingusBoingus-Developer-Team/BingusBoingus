@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { ClientEvents, Events, Message } from 'discord.js';
-import { AEvent, EventKey } from '../event.abstract';
+import { ClientEvents, Events } from 'discord.js';
+import { AEvent } from '../event.abstract';
 import { IResponse, ResponseType } from '../interfaces/iresponse';
 @Injectable()
 export class MessageEvent extends AEvent {
@@ -60,20 +60,20 @@ export class MessageEvent extends AEvent {
     },
   ];
 
-  async execute(args: ClientEvents[Events.MessageCreate]):Promise<void> {
+  async execute(args: ClientEvents[Events.MessageCreate]): Promise<void> {
     const message = args[0];
     const { content, channel, author } = message;
     if (author.bot) return;
 
     this.responseList.forEach((res) => {
       const testRes = res.matcher.test(content);
-        if (testRes) {
-          if (res?.responseType == ResponseType.Reply) {
-            message.reply(res.response);
-          } else {
-            channel.send(res.response);
-          }
+      if (testRes) {
+        if (res?.responseType == ResponseType.Reply) {
+          message.reply(res.response);
+        } else {
+          channel.send(res.response);
         }
-      });
+      }
+    });
   }
 }

@@ -18,4 +18,3 @@ export class CreateOrUpdateServerConfigDto {
   @IsNotEmpty()
   channelId: string;
 }
-

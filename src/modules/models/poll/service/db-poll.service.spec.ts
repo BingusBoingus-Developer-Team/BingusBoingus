@@ -55,7 +55,7 @@ describe('DbPollService', () => {
         createdAt: mockDate,
       } as PollDocument;
 
-      (pollModel as any).create = jest.fn((p) => mockCreatedPoll);
+      (pollModel as any).create = jest.fn(() => mockCreatedPoll);
 
       const result = await service.create(mockPoll);
 
@@ -63,7 +63,9 @@ describe('DbPollService', () => {
     });
 
     it('should return null if an error occurs', async () => {
-      (pollModel as any).create = jest.fn().mockRejectedValue(new MongooseError('test'));
+      (pollModel as any).create = jest
+        .fn()
+        .mockRejectedValue(new MongooseError('test'));
 
       const result = await service.create({} as PollEntity);
 
@@ -73,28 +75,28 @@ describe('DbPollService', () => {
 
   describe('update', () => {
     it('should update a poll', async () => {
-        const mockPoll: PollEntity = {
-          msg: 'Test poll message',
-          ownerName: 'Test owner',
-          upvotes: 0,
-          downvotes: 0,
-          upMembers: [],
-          downMembers: [],
-        } as unknown as PollEntity;
-  
-        const mockCreatedPoll: PollDocument = {
-          ...mockPoll,
-          active: true,
-          createdAt: mockDate,
-        } as PollDocument;
-  
-        (pollModel as any).findOneAndUpdate = jest.fn((p) => mockCreatedPoll);
-  
-        const result = await service.update(mockPoll as UpdatePollDto);
-  
-        expect(result).toStrictEqual(mockCreatedPoll);
-      });
-  })
+      const mockPoll: PollEntity = {
+        msg: 'Test poll message',
+        ownerName: 'Test owner',
+        upvotes: 0,
+        downvotes: 0,
+        upMembers: [],
+        downMembers: [],
+      } as unknown as PollEntity;
+
+      const mockCreatedPoll: PollDocument = {
+        ...mockPoll,
+        active: true,
+        createdAt: mockDate,
+      } as PollDocument;
+
+      (pollModel as any).findOneAndUpdate = jest.fn(() => mockCreatedPoll);
+
+      const result = await service.update(mockPoll as UpdatePollDto);
+
+      expect(result).toStrictEqual(mockCreatedPoll);
+    });
+  });
 
   // Add similar tests for update and get methods
 });

@@ -2,10 +2,6 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CacheType, CommandInteraction, SlashCommandBuilder } from 'discord.js';
 import { ACommand } from '../command.abstract';
 import { PollService } from '../../models/poll/service/poll.service';
-import {
-  CommandAccessLevel,
-  Role,
-} from '../../../common/decoratos/role.decorator';
 
 @Injectable()
 export class PollCommand extends ACommand {

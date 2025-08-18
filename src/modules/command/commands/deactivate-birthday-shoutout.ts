@@ -3,10 +3,6 @@ import { ACommand } from '../command.abstract';
 import { Inject } from '@nestjs/common';
 import { BirthdayEntryService } from '../../models/birthday/service/birthday-entry.service';
 import { CreateOrUpdateBirthdayEntryDto } from '../../models/birthday/dto/create-or-update-birthday-entry.dto';
-import {
-  CommandAccessLevel,
-  Role,
-} from '../../../common/decoratos/role.decorator';
 
 export default class DeactivateBirthdayEntryShoutoutCommand extends ACommand {
   constructor(

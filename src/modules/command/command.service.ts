@@ -10,7 +10,6 @@ import SomeoneOnceSaidCommand from './commands/someone-once-said';
 import GetRandomQuote from './commands/get-a-quote';
 import { PollCommand } from './commands/poll';
 import { VersionCommand } from './commands/version';
-import { BirthdayEntry } from '../../schemas/birthday-entry.schema';
 import AddBirthdayEntryCommand from './commands/add-birthday-entry';
 import DeactivateBirthdayEntryShoutoutCommand from './commands/deactivate-birthday-shoutout';
 import ActivateBirthdayEntryShoutoutCommand from './commands/activate-birthday-shoutout';

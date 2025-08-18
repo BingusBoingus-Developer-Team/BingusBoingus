@@ -1,6 +1,6 @@
 import { ClientEvents } from 'discord.js';
 
-export type EventKey =  keyof ClientEvents;
+export type EventKey = keyof ClientEvents;
 
 export abstract class AEvent {
   abstract readonly event: EventKey;

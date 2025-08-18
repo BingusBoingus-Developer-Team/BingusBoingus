@@ -32,10 +32,10 @@ describe('SomeoneOnceSaidService', () => {
         {
           provide: getModelToken('SomeoneOnceSaid'),
           useValue: {
-            create: jest.fn((p) => mockQuoteDocument),
-            deleteMany: jest.fn((p) => [mockQuoteDocument]),
-            countDocuments: jest.fn((p) => 1),
-            findOne: jest.fn((p) => mockQuoteDocument),
+            create: jest.fn(() => mockQuoteDocument),
+            deleteMany: jest.fn(() => [mockQuoteDocument]),
+            countDocuments: jest.fn(() => 1),
+            findOne: jest.fn(() => mockQuoteDocument),
           },
         },
       ],
@@ -53,7 +53,7 @@ describe('SomeoneOnceSaidService', () => {
 
   describe('create', () => {
     it('should create a quote', async () => {
-      (modelMock as any).create = jest.fn((p) => mockQuoteDocument);
+      (modelMock as any).create = jest.fn(() => mockQuoteDocument);
 
       const result = await service.create(mockQuoteDto);
 
@@ -68,7 +68,7 @@ describe('SomeoneOnceSaidService', () => {
         serverId: 'someid',
         createdAt: mockDate,
       };
-      (modelMock as any).create = jest.fn((p) => new Error('Test error'));
+      (modelMock as any).create = jest.fn(() => new Error('Test error'));
 
       const result = await service.create(mockQuoteDto);
 
@@ -78,7 +78,7 @@ describe('SomeoneOnceSaidService', () => {
 
   describe('getRandomQuote', () => {
     it('should return a random quote', async () => {
-      (modelMock as any).findOne = jest.fn((p) => ({
+      (modelMock as any).findOne = jest.fn(() => ({
         skip: jest.fn(() => ({
           limit: jest.fn(() => mockQuoteDocument),
         })),
@@ -95,7 +95,7 @@ describe('SomeoneOnceSaidService', () => {
 
     it('should return null when there is an error', async () => {
       (modelMock as any).countDocuments = jest.fn(
-        (p) => new Error('Test error'),
+        () => new Error('Test error'),
       );
 
       const result = await service.getRandomQuote('someid');

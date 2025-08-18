@@ -16,4 +16,3 @@ export class ServerConfig {
 export type ServerConfigDocument = ServerConfig & Document;
 
 export const ServerConfigSchema = SchemaFactory.createForClass(ServerConfig);
-

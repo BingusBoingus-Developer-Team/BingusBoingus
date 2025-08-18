@@ -17,26 +17,22 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1');
   app.useGlobalFilters(new ErrorFilter());
   app.useGlobalInterceptors(app.get(Reflector));
-  bootstrapSwagger(app, appConfig);
+  bootstrapSwagger(app);
   await app.startAllMicroservices();
 
   await app.listen(appConfig.appPort);
 }
 
-async function bootstrapSwagger(
-  app: INestApplication,
-  appConfig: AppConfigService,
-) {
-
+async function bootstrapSwagger(app: INestApplication) {
   const config = new DocumentBuilder()
     .setTitle('BingusBoingus API')
     .setDescription('BingusBoingus REST API Documentation')
-    .setVersion('1.0').setBasePath('api/v1')
+    .setVersion('1.0')
+    .setBasePath('api/v1')
     .build();
 
   const document = SwaggerModule.createDocument(app, config, {
     ignoreGlobalPrefix: false,
-
   });
 
   SwaggerModule.setup('api/v1/doc', app, document, {
@@ -44,6 +40,5 @@ async function bootstrapSwagger(
     explorer: true,
   } as unknown as any);
 }
-
 
 bootstrap();

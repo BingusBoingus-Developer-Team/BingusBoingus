@@ -1,7 +1,4 @@
-import {
-  ClientEvents,
-  Events,
-} from 'discord.js';
+import { ClientEvents, Events } from 'discord.js';
 import { AEvent } from '../event.abstract';
 import { CommandService } from '../../command/command.service';
 import { Injectable } from '@nestjs/common';

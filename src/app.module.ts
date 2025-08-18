@@ -17,7 +17,7 @@ import { AppService } from './app.service';
     DeployModule,
     EventModule,
     MongoDatabaseProviderModule,
-    TaskModule
+    TaskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
